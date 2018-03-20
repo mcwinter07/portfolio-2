@@ -1,0 +1,191 @@
+/* main styling */
+body {
+    margin: 0;
+    padding: 0;
+    background: #003D58;
+}
+
+h1
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    color: #FFF7EA;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Esteban', serif;
+    color: #FFF7EA;
+}
+label {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    color: #FFF7EA;
+}
+/* ^ page style ^ */
+
+
+/* grid info */
+
+.landing-page {
+    grid-area: landing;
+}
+.about-page {
+    grid-area: about;
+}
+.project-page {
+    grid-area: projects;
+}
+.skills-page {
+    grid-area: skills;
+}
+.stack-page {
+    grid-area: stack;
+}
+.contact-page {
+    grid-area: contact;
+}
+
+.page-grid {
+    display: grid;
+    grid-template-areas:
+    'landing'
+    'about'
+    'projects'
+    'skills'
+    'stack'
+    'contact';
+
+}
+
+/* ^ page grid ^ */
+
+
+/* landing page */
+
+.landing-page {
+    display: grid;
+    grid-template-rows: 1fr 3fr 2fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
+    max-width: 100vw;
+}
+.logo {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+.quote {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    align-self: center;
+}
+.button {
+    grid-row: 4;
+    grid-column: 2;
+    text-align: center;
+    align-self: center;
+}
+
+/* ^ landing page ^ */
+
+/* about */
+
+.about-page{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 4fr 2fr;
+    max-width: 100vw
+}
+.about-title {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    align-self: center;
+}
+.about-text {
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+.about-footer {
+    grid-row: 4/5;
+    grid-column: 1/4;
+    align-self: end;
+}
+
+/* ^ project page ^ */
+
+/* project page */
+
+.projects-page {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 2fr 1fr;
+    grid-template-columns: 1fr 4fr 2fr;
+}
+.projects-header {
+    grid-column: 1 /span 3;
+    grid-row: 1 /span 1;
+}
+.projects-title {
+    grid-column: 2 /span 1;
+    grid-row: 2 /span 1;
+    text-align: center;
+}
+.projects-text {
+    grid-column: 2 /span 1;
+    grid-row: 3 /span 1;
+}
+.projects-footer {
+    grid-column: 1 /span 3;
+    grid-row: 5 /span 1;
+}
+
+/* skills */
+
+.skills-page {
+    display: grid;
+    grid-template-rows: 5fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
+
+}
+.skills-header {
+    grid-row: 1 /span 1;
+    grid-column: 1 /span 3;
+}
+.skills-title {
+    grid-row: 2 /span 1;
+    grid-column: 2 /span 1;
+    text-align: center;
+}
+.skills-text {
+    grid-row: 3 /span 1;
+    grid-column: 2 /span 1;
+
+}
+.stack-page {
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
+}
+.stack-title {
+    grid-row: 2 /span 1;
+    grid-column:  2 /span 1;
+    text-align: center
+}
+.slider-1 {
+    grid-row: 1 /span 2;
+    grid-column:  2 /span 2;
+    text-align: center
+}
+.slider-2 {
+    grid-row: 1 /span 2;
+    grid-column:  2 /span 2;
+    text-align: center
+}
+
+.contact-page {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
