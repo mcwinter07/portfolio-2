@@ -27,28 +27,6 @@ label {
 }
 /* ^ page style ^ */
 
-
-/* grid info */
-
-.landing-page {
-    grid-area: landing;
-}
-.about-page {
-    grid-area: about;
-}
-.project-page {
-    grid-area: projects;
-}
-.skills-page {
-    grid-area: skills;
-}
-.stack-page {
-    grid-area: stack;
-}
-.contact-page {
-    grid-area: contact;
-}
-
 .page-grid {
     display: grid;
     grid-template-areas:
@@ -67,9 +45,12 @@ label {
 /* landing page */
 
 .landing-page {
+    grid-area: landing;
     display: grid;
     grid-template-rows: 1fr 3fr 2fr 1fr;
     grid-template-columns: 1fr 5fr 1fr;
+    min-height: 100vh;
+    min-width: 100vw;
 
     /* max-width: 100vw;
     max-height: 100vh; */
@@ -86,8 +67,8 @@ label {
     
 }
 .button {
-    grid-row: 4;
-    grid-column: 2;
+    grid-row: 4/5;
+    grid-column: 2/3;
     text-align: center;
     align-self: center;
 }
@@ -98,8 +79,11 @@ label {
 
 .about-page{
     display: grid;
+    grid-area: about;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 5fr 2fr;
+    min-height: 100vh;
+    min-width: 100vw;
 
     /* max-width: 100vw;
     max-height: 100vh; */
@@ -125,15 +109,16 @@ label {
 
 .projects-page {
     display: grid;
-    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-area: projects;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 4fr 1fr;
-
-    /* max-width: 100vw;
-    max-height: 100vh; */
+    min-height: 100vh;
+    min-width: 100vw;
 }
 .projects-header {
     grid-column: 1/4;
-    grid-row: 1/2;
+    grid-row: 1/1;
+    
 }
 .projects-title {
     grid-column: 2/3;
@@ -152,9 +137,12 @@ label {
 /* skills */
 
 .skills-page {
+    grid-area: skills;
     display: grid;
-    grid-template-rows: 5fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 4fr 1fr;
+    min-height: 100vh;
+    min-width: 100vw;
 
     /* max-width: 100vw;
     max-height: 100vh; */
@@ -173,13 +161,17 @@ label {
 .skills-text {
     grid-row: 3/4;
     grid-column: 2/3;
-    align-self: center
+    align-self: center;
+    text-align: center;
 
 }
 .stack-page {
+    grid-area: stack;
     display: grid;
     grid-template-rows: 1fr 1fr 4fr 1fr;
     grid-template-columns: 1fr 5fr 1fr;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 .stack-title {
     grid-row: 1/2;
@@ -213,13 +205,19 @@ label {
 } */
 
 .contact-page {
+    grid-area: contact;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 3fr 1fr;
     grid-template-columns: 1fr 4fr 1fr;
+    grid-row-gap: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+  
 }
 .contact-title {
     grid-row: 2/3;
     grid-column: 2/3;
+    
 }
 .contact-text {
     grid-row: 3/4;
@@ -229,14 +227,70 @@ label {
     grid-row: 4/5;
     grid-column: 2/3;
 }
+
+/* contact form */
+
+.contact-form {
+
+    display: grid;
+    grid-template-areas: 
+        "contact"
+        "comments" 
+        "button";
+  	grid-template-rows: 1fr;  
+  	grid-template-columns: 1fr;
+    grid-gap: .5em;
+    background: #849EA8;
+    padding: 0;
+    align-self: center;
+
+  }
+  #contact-details {
+    grid-area: contact;
+    grid-row: 1;
+    max-width: 9.5em;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    
+   }
+   #comment-box {
+    grid-area: comments;
+    grid-row: 2/3;
+   }
+   .contact-form button {
+     grid-area: button;
+     border: 0;
+     background: gray;
+     color: white;
+   }
+  .contact-form label  {
+    grid-area: labels;
+  }
+  .contact-form input {
+    grid-area: contact;
+   	width: 100%;
+    padding: 1.1em;
+    border: none;
+    margin-bottom: 1em;
+  }
+  .contact-form textarea {
+   min-height: calc(100%);
+   width: 100%;
+   border: none;
+  }
+
 .contact-icons {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 10px;
 }
+
 .contact-icons {
-    grid-row: 1/4;
+    grid-row: 5/6;
+    grid-column: 2/3;
     align-self: center;
 }
 

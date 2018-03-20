@@ -158,25 +158,32 @@
     </div>
 
     <div class="contact-text">
-        <p>Whether you're looking for a contractor who can hit the ground running, or are after a full stack dev with a design focus, feel fre to drop me a message and I'll get back as soon as I'm able.</p>
+        <p>Whether you're looking for a contractor who can hit the ground running, or are on the hunt for a full stack dev with a design focus, drop me a message and I'll get back as soon as I'm able.</p>
     </div>
 
     <div class="contact-form">
-        <form action="/action_page.php" target="_blank">
-        <div class="">
-            <label>Name</label>
-            <input class="name" required name="Name">
-        </div>
-        <div>
-            <label>Email</label>
-            <input class="email"  required name="Email">
-        </div>
-        <div>
-            <label>Message</label>
-            <input  class="message" required name="Message">
-        </div>
-        <button type="submit">Send</button>
+        <form class="contact" action="mcwinter.07@gmail.com" target="_blank" method="post">
+            <div id="contact-details">
+            <label>Name 
+                <input type="text" name="user-name" id="user-name" placeholder="Please enter your name..." required>
+            </label>
+            <label>Email 
+                <input type="email" name="email-address" placeholder="Please enter your email..."  id="email-address">
+            </label>
+            <label>Phone 
+                <input type="tel" name="phone" placeholder="Please enter your number..." id="phone">
+            </label>
+            </div>
+            <div id="comment-box">
+                <label>Message
+                <textarea name="message" placeholder="Please enter your message..." id="message" maxlength="500"></textarea>
+              </label>
+            </div>
+            <button>Submit</button>
         </form>
+    
+        
+    </div>
 
         <div class="contact-icons">
                 <img class"github" src="assets/svg/githubicon.svg" alt="image icon for github">
@@ -187,17 +194,6 @@
 
                 <img class"cv" src="assets/svg/cvicon.svg" alt="image icon for Michael Winters CV">
         </div>
-    </div>
-
-
-    
-    </body>
-    </html>
-    
-            </p>
-
-        </div>
-
     </div>
 
 </body>
