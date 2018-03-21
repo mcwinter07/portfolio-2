@@ -94,7 +94,7 @@ In future iterations I will aim to:
 
 • include media queries for web
 
-![project slider](https://drive.google.com/open?id=1UPm5SxrMoYanXmTwAc18QGOvBfLzVnbX "project slider")
+![project slider](https://drive.google.com/open?id=1UPm5SxrMoYanXmTwAc18QGOvBfLzVnbX"project slider")
 
 
 
