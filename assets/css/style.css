@@ -1,12 +1,18 @@
-/* page styling */
+/* ---------------
+    page styling 
+------------------*/
+
+* {
+    box-sizing: border-box;
+    
+  }
+  
 body {
     margin: 0;
     padding: 0;
     background: #003D58;
 }
-* {
-    box-sizing: border-box;
-}
+
 footer {
     margin: 0;
     padding: 0;
@@ -18,7 +24,14 @@ h1
     padding: 0;
     font-family: 'Nunito', sans-serif;
     color: #FFF7EA;
-    font-size: 3em;
+    font-size: 2.5em;
+}
+h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    color: #FFF7EA;
+    font-size: 24px;
 }
 p {
     margin: 0;
@@ -33,338 +46,174 @@ label {
     font-family: 'Nunito', sans-serif;
     color: #FFF7EA;
 }
-/* ^ page style ^ */
 
 
 
-/* page grid */
-.page-grid {
+/* -----------------------
+        page grid 
+------------------------- */
+.site_wrapper {
     display: grid;
     grid-template-areas:
-    'landing'
-    'about'
-    'projects'
-    'skills'
-    'stack'
-    'contact';
-    max-height: 1920px;
-    max-width: 100vw;
+    "landing"
+    "about"
+    "projects"
+    "divider"
+    "stack"
+    "contact";
+    grid-template-rows: repeat(1fr);
+    min-width: 100vw;
+    min-height: 100vw;
 }
-/* ^ page grid ^ */
 
-
-/* landing page */
-.landing-page {
+/* -----------------------
+        landing 
+------------------------- */
+.landing {
     grid-area: landing;
     display: grid;
-    grid-template-rows: 1fr 3fr 2fr 2fr;
+    grid-template-areas:
+    "logo logo logo"
+    "quote quote quote"
+    ". button .";
+    grid-template-rows: 3fr 2fr 1fr;
     grid-template-columns: 1fr 5fr 1fr;
     min-height: 100vh;
-    min-width: 100vw;
+    /* max-height: ; */
+    min-width: 100vw
 }
-.logo {
-    grid-row: 2/3;
-    grid-column: 2/3;
+.logo  {
+    grid-area: logo;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-self: center
 }
 .quote {
-    grid-row: 3/4;
-    grid-column: 2/3;
+    grid-area: quote;
+    padding-left: 10%;
+    padding-right: 10%;
     align-self: center;
     text-align: center;
-    
+    margin: .5em
 }
-.button {
-    grid-row: 4/5;
-    grid-column: 2/3;
-    align-self: center;
-    text-align: center;
-
+.landing-button {
+    grid-area: button;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-    background: #E8624D;
-    color: #FFF7EA;
+    width: 50px;
+    height: 50px;
+    background: #FFF7EA;
     border-radius: 50%;
-    text-align: center;
-    line-height: 30px;
-    font-size: 48px;
+    position: relative;
 }
+/* -----------------------
+        landing 
+------------------------- */
 
-.button:before,
-.button:after
-{
-    content: '';
-    display: block;
-    position: absolute;
-    border: 50%;
-    border: 1px solid #E8624D;
-    left: -20px;
-    right: -20px;
-    top: -20px;
-    bottom: -20px;
-    border-radius: 50%;
-    animation: animate 3s linear infinite;
-    opacity: 0;
 
-}
-.button:after
-{
-    animation-delay: .1s;
-}
-@keyframes animate
-{
-    0%
-    {
-        transform: scale(0.5);
-        opacity: 0;
+/* -----------------------
+        About 
+------------------------- */
 
-    }
-    50%
-    {
-        opacity: 1;
-
-    }
-    100%
-    {
-        transform: scale(1.25);
-        opacity: 0;
-
-    }
-
-} 
-.button:hover {
-    -webkit-animation: none;
-    animation: none;    
-}
-
-/* ^ landing page ^ */
-
-/* about */
-
-.about-page{
-    display: grid;
+.about {
     grid-area: about;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 5fr 2fr;
-    grid-gap:
-    min-height: 100vh;
-    min-width: 100vw;
-}
-.about-title {
-    grid-row: 2/3;
-    grid-column: 2/3;
-    align-self: center;
-}
-.about-text {
-    grid-row: 3/4;
-    grid-column: 2/3;
-}
-.about-footer {
-    grid-row: 4/5;
-    grid-column: 1/4;
-    align-self: end;
-}
-
-
-/* ^ project page ^ */
-
-/* project page */
-
-.projects-page {
     display: grid;
-    grid-area: projects;
-    grid-template-rows: 3fr 1fr 1fr 5fr;
-    grid-template-columns: 1fr 4fr 1fr;
-    min-height: 100vh;
-    min-width: 100vw;
-    
-}
-.projects-header {
-    grid-column: 1/4;
-    grid-row: 1/1;
-    
-}
-.projects-title {
-    grid-column: 2/3;
-    grid-row: 2/3;
-}
-.projects-text {
-    grid-column: 2/3;
-    grid-row: 3/4;
-}
-.projects-footer {
-    grid-column: 1/4;
-    grid-row: 4/5;
-    align-self: end;
-}
-
-/* skills page */
-
-.skills-page {
-    grid-area: skills;
-    display: grid;
-    grid-template-rows: 5fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 4fr 1fr;
-    min-height: 100vh;
-    min-width: 100vw;
-    max-height: 1920px;
-
-}
-.skills-header {
-    grid-row: 1/1;
-    grid-column: 1/4;
-}
-.skills-title {
-    grid-row: 2/3;
-    grid-column: 2/3;
-    text-align: center;
-    align-self: center
-}
-.skills-text {
-    grid-row: 3/4;
-    grid-column: 2/3;
-    align-self: center;
- 
-/* stack page */
-
-}
-.stack-page {
-    grid-area: stack;
-    display: grid;
-    grid-template-rows: 1fr 1fr 4fr 1fr;
+    grid-template-areas:
+    ". about-title ."
+    ". about-text ."
+    "about-footer about-footer about-footer";
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 5fr 1fr;
     min-height: 100vh;
-    min-width: 100vw;
-    max-height: 1920px;
-}
-.stack-title {
-    grid-row: 1/2;
-    grid-column: 2/3;
-    align-self: center;
-    text-align: center;
-}
-.slider-1{
-    display: grid;
-    grid-template-rows: 3fr;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-}
-.slider-1 {
-    grid-row: 3/4;
-    grid-column:  2/3;
-    align-self: center;
+    max-height: 100vh;
+    min-width: 100vw
 }
 
-/* Slider with additional skills *
-.slider-2{
-    display: grid;
-    grid-template-rows: 3fr;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+.about-title {
+    grid-area: about-title;
+    align-self: flex-end
 }
-.slider-2 {
-    grid-row: 3/4;
-    grid-column:  2/3;
-    align-self: center;
-} */
 
-.contact-page {
-    grid-area: contact;
+.about-text {
+    grid-area: about-text;
+    align-self: center;
+
+}
+
+.about-footer {
+    grid-area: about-footer;
+    align-self: flex-end
+}
+
+/* -----------------------
+        About 
+------------------------- */
+
+
+/* -----------------------
+        Projects 
+------------------------- */
+
+.projects {
+    grid-area: projects;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 3fr 1fr;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-row-gap: 0;
+    grid-template-areas:
+    ". title ."
+    ". text ."
+    "footer footer footer"; 
     min-height: 100vh;
+    max-height: 100vh;
     min-width: 100vw;
-  
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
 }
-.contact-title {
-    grid-row: 1/2;
-    grid-column: 2/3;
-    
-}
-.contact-text {
-    grid-row: 3/4;
-    grid-column: 2/3;
-}
-.contact-form {
-    grid-row: 4/5;
-    grid-column: 2/3;
-}
-
-/* contact form */
-
-.contact-form {
-
-    display: grid;
-    grid-template-areas: 
-        "contact"
-        "comments" 
-        "button";
-  	grid-template-rows: 1fr;  
-  	grid-template-columns: 1fr;
-    grid-gap: .5em;
-    background: #849EA8;
-    padding: 0;
+.projects-title {
+    grid-area: title;
     align-self: center;
+    text-align: left;
 
-  }
-  #contact-details {
-    grid-area: contact;
-    grid-row: 1;
-    /* max-width: ; */
-    text-align: center;
-    align-content: center;
-    align-items: center;
+}
+.projects-text {
+    grid-area: text;
     align-self: center;
-    
-   }
-   #comment-box {
-    grid-area: comments;
-    grid-row: 2/3;
-   }
-   .contact-form button {
-     grid-area: button;
-     border: 0;
-     background: #01232D;
-     color: #FFF7EA;
-     align-self: center
-   }
-  .contact-form label  {
-    grid-area: labels;
-  }
-  .contact-form input {
-    grid-area: contact;
-   	width: 100%;
-    padding: 1.1em;
-    border: none;
-    margin-bottom: 1em;
+    text-align: left;
 
-  }
-  .contact-form textarea {
-   min-height: calc(100%);
-   width: 100%;
-   border: none;
-  }
+}
 
-.contact-icons {
+.projects-footer {
+    grid-area: footer;
+    grid-row-end: span 2;
+
+    z-index: -1;
+}
+/* -----------------------
+        Projects 
+------------------------- */
+
+/* -----------------------
+        Divider 
+------------------------- */
+.divider {
+    grid-area: divider;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 10px;
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100vw;
+
+}
+.div-img {
+    grid-row: 1/2;
+    object-fit: contain;
+
+
+    z-index: 10;
 }
 
-.contact-icons {
-    grid-row: 5/6;
-    grid-column: 2/3;
-    align-self: center;
+.stack-title {
+    grid-area: stack;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
-
-/* hover */
-
-github:hover {
-    opacity: 0.7;
-}
-
