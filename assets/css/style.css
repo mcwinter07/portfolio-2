@@ -4,7 +4,6 @@
 
 * {
     box-sizing: border-box;
-    
   }
   
 body {
@@ -18,40 +17,31 @@ footer {
     padding: 0;
 }
 
-h1
-{
-    margin: 0;
-    padding: 0;
+h1, h2, label {
     font-family: 'Nunito', sans-serif;
     color: #FFF7EA;
-    font-size: 2.5em;
 }
+h1 {
+    font-size: 2.5em
+}
+
 h2 {
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito', sans-serif;
-    color: #FFF7EA;
-    font-size: 24px;
+    font-size: 1.5em;
 }
+
 p {
-    margin: 0;
-    padding: 0;
     font-family: 'Esteban', serif;
     color: #FFF7EA;
     font-size: 1em;
 }
-label {
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito', sans-serif;
-    color: #FFF7EA;
-}
+
 
 
 
 /* -----------------------
         page grid 
 ------------------------- */
+
 .site_wrapper {
     display: grid;
     grid-template-areas:
@@ -62,50 +52,36 @@ label {
     "stack"
     "contact";
     grid-template-rows: repeat(1fr);
-    min-width: 100vw;
-    min-height: 100vw;
 }
 
 /* -----------------------
         landing 
 ------------------------- */
 .landing {
-    grid-area: landing;
-    display: grid;
-    grid-template-areas:
-    "logo logo logo"
-    "quote quote quote"
-    ". button .";
-    grid-template-rows: 3fr 2fr 1fr;
-    grid-template-columns: 1fr 5fr 1fr;
-    min-height: 100vh;
-    /* max-height: ; */
-    min-width: 100vw
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+min-height: 100vh;
+min-width: 100vw;
+justify-content: center;
+
 }
-.logo  {
-    grid-area: logo;
-    padding-left: 10%;
-    padding-right: 10%;
+.logo {
+    width: 80vw;
     align-self: center
 }
 .quote {
-    grid-area: quote;
-    padding-left: 10%;
-    padding-right: 10%;
-    align-self: center;
     text-align: center;
-    margin: .5em
-}
+    font-size: 5vw;
+    padding-top: 2em;
+} 
 .landing-button {
-    grid-area: button;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background: #FFF7EA;
-    border-radius: 50%;
-    position: relative;
+    padding-top: 2em;
+    width: 10vw;
+
+
+    align-self: center
+
 }
 /* -----------------------
         landing 
@@ -184,7 +160,6 @@ label {
 .projects-footer {
     grid-area: footer;
     grid-row-end: span 2;
-
     z-index: -1;
 }
 /* -----------------------
@@ -201,19 +176,53 @@ label {
     min-height: 100vh;
     max-height: 100vh;
     min-width: 100vw;
-
-}
-.div-img {
-    grid-row: 1/2;
     object-fit: contain;
 
+}
 
+.div-img {
+    grid-row: 1/2;
+    max-height: 100vh;
     z-index: 10;
+    
+}
+
+/* -----------------------
+        Divider 
+------------------------- */
+
+/* -----------------------
+        tech stack 
+------------------------- */
+
+.tech-stack {
+    grid-area: stack;
+    display: grid;
+    grid-template-areas:
+    ". . ."
+    ". header ."
+    ". badgebox .";
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 .stack-title {
-    grid-area: stack;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    grid-area: header;
+    align-self: center;
+    text-align: center
 }
+
+.stack-box {
+    grid-area: badgebox;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-area: badgebox;
+    grid-column: 2/3;
+}
+/* -----------------------
+        tech stack 
+------------------------- */
