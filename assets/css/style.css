@@ -4,6 +4,8 @@
 
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
   }
   
 body {
@@ -20,6 +22,7 @@ footer {
 h1, h2, label {
     font-family: 'Nunito', sans-serif;
     color: #FFF7EA;
+    
 }
 h1 {
     font-size: 2.5em
@@ -32,7 +35,7 @@ h2 {
 p {
     font-family: 'Esteban', serif;
     color: #FFF7EA;
-    font-size: 1em;
+    font-size: 1.3em;
 }
 
 
@@ -51,37 +54,49 @@ p {
     "divider"
     "stack"
     "contact";
-    grid-template-rows: repeat(1fr);
+    
 }
 
 /* -----------------------
         landing 
 ------------------------- */
 .landing {
+z-index: 1;
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
 min-height: 100vh;
 min-width: 100vw;
 justify-content: center;
-
 }
+
+.logo, .landing-button {
+    max-width: 60%;
+}
+
 .logo {
+    padding-top: 2em;
+    padding-bottom: 2em;
     width: 80vw;
     align-self: center
 }
+
 .quote {
     text-align: center;
     font-size: 5vw;
-    padding-top: 2em;
+
 } 
+
 .landing-button {
     padding-top: 2em;
     width: 10vw;
+    align-self: center;
+    padding-top: 4em;
+}
 
-
+.landing-button .st1 {
+    width: 15vw;
     align-self: center
-
 }
 /* -----------------------
         landing 
@@ -93,34 +108,80 @@ justify-content: center;
 ------------------------- */
 
 .about {
+    z-index: 2;
     grid-area: about;
-    display: grid;
-    grid-template-areas:
-    ". about-title ."
-    ". about-text ."
-    "about-footer about-footer about-footer";
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 5fr 1fr;
+    display: flex;
+    flex-direction: column;
+    min-width: 100vw;
     min-height: 100vh;
-    max-height: 100vh;
-    min-width: 100vw
+
 }
 
-.about-title {
-    grid-area: about-title;
-    align-self: flex-end
+.about article {
+    align-self: flex-start;
+    padding-left: 10vw;
+    max-width: 80vw;
+    font-size: 4vw;
 }
+
+
+
+/* .about .about-slider #about-2 {
+    display: none
+} */
 
 .about-text {
-    grid-area: about-text;
-    align-self: center;
-
+    align-self: flex-start;
 }
 
-.about-footer {
-    grid-area: about-footer;
-    align-self: flex-end
+/* slider */
+
+.about-slider {
+    display: flex;
+    overflow: hidden;
 }
+
+.about-slider .slide {
+    min-width: 100%;
+    display: flex;
+}
+
+.slider-nav {
+    display: flex;
+    padding-left: 5vw
+    
+}
+
+.slider-nav ul {
+    display: block;
+    transform: rotate(-90deg);
+  }
+  
+  .slider-nav ul > li {
+    list-style: none;
+    padding-bottom: 1em
+  }
+
+  
+.slider-nav ul li a {
+    display: flex;
+    font-size: 1em;
+    width: 5vw;
+    height: 5vw;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    transform: rotate(90deg);
+    border: .5vw solid #DCD2C6;
+    color: #FFF7EA
+  }
+  
+  .slider-nav ul li a:hover {
+    background: #E8624D;
+    border: 0.5vw solid #DCD2C6;
+    color: #E8624D
+  }
+/* slider */
 
 /* -----------------------
         About 
@@ -132,6 +193,7 @@ justify-content: center;
 ------------------------- */
 
 .projects {
+    z-index: 3;
     grid-area: projects;
     display: grid;
     grid-template-areas:
