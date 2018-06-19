@@ -256,41 +256,43 @@ justify-content: center;
 
 display: grid;
 grid-template-areas: 
-    "body"
-    "form" 
-    "icons";
-grid-template-rows: 1fr 1fr .5fr;  
+    "body body body"
+    ". form . " 
+    ". icons .";
+grid-template-rows: 1fr 1fr .5fr; 
+grid-template-columns: 1fr 8fr 1fr
 
 }
 
 .contact-text {
     grid-area: body;
+    padding-top: 1em;
     font-size: 4vw;
     padding: 0 10vw 0 10vw
 }
 
-.contact {
+.contact-form {
     grid-area: form;
     background: #849EA8;
     border-radius: .5em;
-    
 }
 
 .contact-form button {
     border: 0;
     background: #003D58;
     color: #FFF7EA;
-    align-self: center
 }
 
 .contact-form input {
-    width: 100%;
+    display: flex;
+    flex-direction: flex-end;
+    width: 80%;
     padding: 1.1em;
     border: none;
 }
 .contact-form textarea {
     min-height: calc(100%);
-    width: 100%;
+    width: 80%;
     border: none
     }
 
