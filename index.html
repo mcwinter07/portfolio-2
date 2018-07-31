@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Michael Winter Portfolio</title>
-    <link href="https://fonts.googleapis.com/css?family=Nunito | Esteban|" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/scss?family=Nunito | Esteban|" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/scss?family=Nunito" rel="stylesheet">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 
 
 </head>
@@ -145,12 +145,12 @@
         </article>
 
         <section class="stack-wrapper">
-                <img class"badge-1" src="assets/svg/badgeruby.svg" alt="a badge denoting the Ruby">
-                <img class"badge-2" src="assets/svg/badgerails.svg" alt="a badge denoting the Ruby on Rails">
-                <img class"badge-3" src="assets/svg/badgehtml.svg" alt="a badge denoting the HTML 5">
-                <img class"badge-4" src="assets/svg/badgecss.svg" alt="a badge denoting the CSS 3">
-                <img class"badge-5" src="assets/svg/badgereact.svg" alt="a badge denoting the React">
-                <img class"badge-6" src="assets/svg/badgemongo.svg" alt="a badge denoting the Mongo DB">
+                <img class"badge-front" src="assets/svg/badgeruby.svg" data-text="Ruby" alt="a badge denoting the Ruby">
+                <img class"badge-front" src="assets/svg/badgerails.svg" alt="a badge denoting the Ruby on Rails">
+                <img class"badge-front" src="assets/svg/badgenodejs.svg" alt="a badge denoting the NodeJS">
+                <img class"badge-front" src="assets/svg/badgereact.svg" alt="a badge denoting the React">
+                <img class"badge-front" src="assets/svg/badgehtml.svg" alt="a badge denoting the HTML 5">
+                <img class"badge-front" src="assets/svg/badgecss.svg" alt="a badge denoting the CSS 3">
         </section>
 
     </section>
@@ -169,27 +169,15 @@
             </article>
         </section>
 
-        <section class="contact-form">
-            <form class="contact" action="mcwinter.07@gmail.com" target="_blank" method="post">
-                <div id="contact-details">
-                    <label for="user-name">Name</label>
-                        <input type="text" name="user-name" id="user-name" placeholder="Please enter your name..." required>
-                    
-                    <label for="email-address">Email</label>
-                        <input type="email" name="email-address" placeholder="Please enter your email..."  id="email-address">
-                    
-                    <label for="phone">Phone</label>
-                        <input type="tel" name="phone" placeholder="Please enter your number..." id="phone">
-                </div>
-                <div id="comment-box">
-                    <label>Message
-                    <textarea name="message" placeholder="Please enter your message..." id="message" maxlength="500"></textarea>
-                </label>
-                </div>
+        <section class="contact-form-container">
+            <form class="contact-form" action="mcwinter.07@gmail.com" target="_blank" method="post">
+                <input type="text" name="user-name" id="user-name" placeholder="Please enter your name..." required>
+                <input type="email" name="email-address" placeholder="Please enter your email..."  id="email-address">
+                <input type="tel" name="phone" placeholder="Please enter your number..." id="phone">
+                <textarea name="message" placeholder="Please enter your message..." id="message" maxlength="500"></textarea>
                 <button>Submit</button>
             </form>
         </section>
-
         <section class="contact-icons">
             <a class"github" href=https://github.com/mcwinter07><img src="assets/svg/githubicon.svg" alt="image icon for github"></a>
             <a class"codepen" href=https://codepen.io/mcwinter07/><img src="assets/svg/codepenicon.svg" alt="image icon for Codepen"></a>
