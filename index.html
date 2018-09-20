@@ -9,8 +9,6 @@
     <link href="https://fonts.googleapis.com/scss?family=Nunito" rel="stylesheet">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="/assets/css/styles.css">
-
-
 </head>
 
 <body>
@@ -40,23 +38,23 @@
         Landing
 ---------------------------------->   
 
-<div class="site_wrapper">
+    <main class="site_wrapper">
 
 
         <section id="1" class="landing">
 
-            <div class="logo"><img src="/assets/logo/logo.svg" alt="Michael Winter's brand logo | Welcome to my online folio"></div>
-
-                <div class="quote">
-                    <h2>make ideas,<br>move mountains</h2>
-                </div>
-                <!-- button smooth scrolls to about -->
-                <div class="landing-button">
-                   <a href="#2">
-                       <img src="/assets/icons/arrowbutton.svg" alt="landing page button">
-                   </a>
-                </div>
-                <!-- button smooth scrolls to about -->
+            <div class="logo-container">
+                <img class="logo" src="/assets/logo/logo.svg" alt="Hi my name's Michael Winter and you've discovered my online folio!">
+        
+                <h2>make ideas, <br>move mountains</h2>
+            </div>
+            <!-- button smooth scrolls to about -->
+            <div class="landing-button">
+                <a href="#2">
+                    <img src="/assets/icons/arrowbutton.svg" alt="landing page button">
+                </a>
+            </div>
+            <!-- button smooth scrolls to about -->
                 
         </section>
 
@@ -145,12 +143,30 @@
         </article>
 
         <section class="stack-wrapper">
-                <img class"badge-front" src="assets/svg/badgeruby.svg" data-text="Ruby" alt="a badge denoting the Ruby">
-                <img class"badge-front" src="assets/svg/badgerails.svg" alt="a badge denoting the Ruby on Rails">
-                <img class"badge-front" src="assets/svg/badgenodejs.svg" alt="a badge denoting the NodeJS">
-                <img class"badge-front" src="assets/svg/badgereact.svg" alt="a badge denoting the React">
-                <img class"badge-front" src="assets/svg/badgehtml.svg" alt="a badge denoting the HTML 5">
-                <img class"badge-front" src="assets/svg/badgecss.svg" alt="a badge denoting the CSS 3">
+
+            <div class="badge-container">
+                <div class"badge-front"><img src="assets/svg/badgeruby.svg" alt="a badge denoting the Ruby"></div>
+            </div>
+            
+            <div class="badge-front">
+                <img src="assets/svg/badgerails.svg" alt="a badge denoting the Ruby on Rails">
+            </div>
+            
+            <div class="badge-front">
+                <img src="assets/svg/badgenodejs.svg" alt="a badge denoting the NodeJS">
+            </div>
+            
+            <div class="badge-front">
+                <img src="assets/svg/badgereact.svg" alt="a badge denoting the React">
+            </div>
+            
+            <div class="badge-front">
+                <img src="assets/svg/badgehtml.svg" alt="a badge denoting the HTML 5">
+            </div>
+            
+            <div class="badge-front">
+                <img src="assets/svg/badgecss.svg" alt="a badge denoting the CSS 3">
+            </div>
         </section>
 
     </section>
@@ -170,7 +186,7 @@
         </section>
 
         <section class="contact-form-container">
-            <form class="contact-form" action="mcwinter.07@gmail.com" target="_blank" method="post">
+            <form class="contact-form" action="mcwinter.07@gmail.com" target="_blank" method="post" netlify>
                 <input type="text" name="user-name" id="user-name" placeholder="Please enter your name..." required>
                 <input type="email" name="email-address" placeholder="Please enter your email..."  id="email-address">
                 <input type="tel" name="phone" placeholder="Please enter your number..." id="phone">
@@ -179,13 +195,14 @@
             </form>
         </section>
         <section class="contact-icons">
-            <a class"github" href=https://github.com/mcwinter07><img src="assets/svg/githubicon.svg" alt="image icon for github"></a>
-            <a class"codepen" href=https://codepen.io/mcwinter07/><img src="assets/svg/codepenicon.svg" alt="image icon for Codepen"></a>
-            <a class"linkedin" href=https://www.linkedin.com/in/mcwinter><img src="assets/svg/linkedinicon.svg" alt="image icon for linkedin"></a>
-            <a class"cv" href=https://drive.google.com/file/d/1y684Y0Ml6FclHndwX7DIUrVTkD-84Am9/view?usp=sharing><img src="assets/svg/cvicon.svg" alt="image icon for Michael Winters CV"></a>
+            <a class="github" href=https://github.com/mcwinter07><img src="assets/svg/githubicon.svg" alt="image icon for github"></a>
+            <a class="codepen" href=https://codepen.io/mcwinter07/><img src="assets/svg/codepenicon.svg" alt="image icon for Codepen"></a>
+            <a class="linkedin" href=https://www.linkedin.com/in/mcwinter><img src="assets/svg/linkedinicon.svg" alt="image icon for linkedin"></a>
+            <a class="cv" href=https://drive.google.com/file/d/1y684Y0Ml6FclHndwX7DIUrVTkD-84Am9/view?usp=sharing><img src="assets/svg/cvicon.svg" alt="image icon for Michael Winters CV"></a>
         </section>
+        
     </section>
     
 <!-- end -->
-</div>
+    </main>
 </body>
