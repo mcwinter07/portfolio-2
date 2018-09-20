@@ -24,6 +24,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--primary-bg-color);
+
 }
 
 h1, h2, label {
@@ -109,8 +110,10 @@ p {
     ". content ."
     "graphic graphic graphic";
     grid-template-columns: .5fr 1fr .8fr;
-    grid-template-rows: .2fr .5fr 1fr; 
+    grid-template-rows: .2fr .5fr 1fr;
     min-height: 100vh;  
+    overflow: hidden;
+
 }
 
 /* -----------------------
@@ -120,6 +123,10 @@ p {
 .about-slider-container{
     grid-area: content;
 }
+
+/* .about-slider {
+    display: grid;
+} */
 .about-slider {
     display: flex;
     overflow: hidden;
@@ -150,7 +157,7 @@ p {
   .slider-nav li a:hover {
     background: #E8624D;
     border: 0.5vw solid #DCD2C6;
-    color: #E8624D
+    color: #E8624D;
   }
 
 /* -----------------------
@@ -158,10 +165,9 @@ p {
 ------------------------- */
 
   .about-footer {
-    grid-area: graphic;
-    align-self: flex-end;
-    overflow: hidden;
+    grid-area: graphic;    
 }
+
 
 
 
