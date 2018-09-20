@@ -6,8 +6,6 @@
     --default-h1-size: 2.5em;
     --default-h2-size: 1.5em;
     --default-p-size: 1em;
-
-
 }
 
 
@@ -19,6 +17,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     list-style: none;
+    padding: 0;
   }
   
 body {
@@ -53,7 +52,6 @@ p {
 /* -----------------------
         page grid 
 ------------------------- */
-
 .site_wrapper {
     display: grid;
     grid-template-areas:
@@ -63,12 +61,13 @@ p {
     "stack"
     "contact";
 }
-
 /* -----------------------
         landing 
 ------------------------- */
+
 .landing {
     z-index: 1;
+    grid-area: landing;
     display: grid;
     justify-content: space-evenly;
     min-height: 100vh;
@@ -84,14 +83,12 @@ p {
     text-align: center;
 }
 
-
 .landing-button {
     width: 15vw;
     max-width: 70px;
     padding-bottom: 2em;
     align-self: flex-end;
     justify-self: center
-    
 }
 
 /* -----------------------
@@ -102,76 +99,71 @@ p {
 /* -----------------------
         About 
 ------------------------- */
-
 .about {
     z-index: 2;
     grid-area: about;
-    display: flex;
+    display: grid;
     flex-direction: column;
-    min-width: 100vw;
-    min-height: 100vh;
-    
-}
-
-.about article {
-    align-self: flex-start;
-    padding-left: 10vw;
-    max-width: 80vw;
-    font-size: 4vw;
-}
-
-
-.about-text {
-    align-self: flex-start;
+    grid-template-areas:
+    ". . ."
+    ". content ."
+    "graphic graphic graphic";
+    grid-template-columns: .5fr 1fr .8fr;
+    grid-template-rows: .2fr .5fr 1fr; 
+    min-height: 100vh;  
 }
 
 /* -----------------------
         about slider 
 ------------------------- */
 
+.about-slider-container{
+    grid-area: content;
+}
 .about-slider {
     display: flex;
     overflow: hidden;
+    max-width: 450px;
 }
-
 .about-slider .slide {
     min-width: 100%;
-    display: flex;
 }
-
 .slider-nav {
     display: flex;
-    padding-left: 5vw 
 }
-
-.slider-nav ul {
-    display: block;
-    transform: rotate(-90deg);
+.slider-nav li {
+    padding-right: 1em;
 }
-  
-.slider-nav ul > li {
-    list-style: none;
-    padding-bottom: 1em
-}
-
-.slider-nav ul li a {
+.slider-nav li a {
     display: flex;
     font-size: 1em;
-    width: 5vw;
-    height: 5vw;
+    width: 1em;
+    height: 1em;
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
     border-radius: 100%;
     transform: rotate(90deg);
-    border: .5vw solid #DCD2C6;
+    border: .15em solid #DCD2C6;
     color: var(--primary-font-color)
   }
   
-  .slider-nav ul li a:hover {
+  .slider-nav li a:hover {
     background: #E8624D;
     border: 0.5vw solid #DCD2C6;
     color: #E8624D
   }
+
+/* -----------------------
+        about footer 
+------------------------- */
+
+  .about-footer {
+    grid-area: graphic;
+    align-self: flex-end;
+    overflow: hidden;
+}
+
+
 
 /* -----------------------
         Projects 
