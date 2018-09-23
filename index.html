@@ -24,15 +24,24 @@
         Navigation
 ---------------------------------->   
 
-<!-- <nav>   
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav> -->
+
+    <header>
+        <h1 class="logo">Welcome!</h1>
+        <!-- CHECKBOX WILL GO HERE -->
+        <input id="nav-toggle" class="nav-toggle" type="checkbox" name="hamburger" id="">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <img src="./assets/icons/if_match_289617.svg" alt="">
+        </label>
+    </header>
 
  <!------------------------------- 
         Landing
@@ -178,7 +187,7 @@
             </header>
 
             <article class="contact-body">
-                <p>Whether you're looking for a contractor who can hit the ground running, or are on the hunt for a full stack dev with a design focus, drop me a message and I'll get back as soon as I'm able.</p>
+                <p>Whether you're looking for a contractor who can hit the ground running, or are on the hunt for a full stack develper with a design focus, drop me a message and I'll get back as soon as I'm able.</p>
             </article>
         </section>
 
@@ -187,7 +196,7 @@
                 <input type="text" name="user-name" id="user-name" placeholder="Please enter your name..." required>
                 <input type="email" name="email-address" placeholder="Please enter your email..."  id="email-address">
                 <input type="tel" name="phone" placeholder="Please enter your number..." id="phone">
-                <textarea name="message" placeholder="Please enter your message..." id="message" maxlength="500"></textarea>
+                <textarea rows="4" name="message" placeholder="Please enter your message..." id="message" maxlength="500"></textarea>
                 <button>Submit</button>
             </form>
         </section>
