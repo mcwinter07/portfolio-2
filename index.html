@@ -4,53 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Michael Winter Portfolio</title>
-    <link href="https://fonts.googleapis.com/scss?family=Nunito | Esteban|" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/scss?family=Nunito" rel="stylesheet">
+    <title>Michael Winter | Graphic Designer | Developing Developer | Digital Nomad</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css"><script src="./assets/js/index.js"></script>
 </head>
 
 <body>
-
- <!------------------------------- 
-        Site Wrapper
----------------------------------->   
-
-
-
-
  <!------------------------------- 
         Navigation
 ---------------------------------->   
-
-
-    <header>
-        <h1 class="logo">Welcome!</h1>
-        <!-- CHECKBOX WILL GO HERE -->
+    <header class="nav-container">
         <input id="nav-toggle" class="nav-toggle" type="checkbox" name="hamburger" id="">
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul id="nav-link-container">
+                <li><a id="nav-link" href="#home">Home</a></li>
+                <li><a id="nav-link" href="#about">About</a></li>
+                <li><a id="nav-link" href="#projects">Projects</a></li>
+                <li><a id="nav-link" href="#skills">Skills</a></li>
+                <li><a id="nav-link" href="#contact">Contact</a></li>
             </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">
             <img src="./assets/icons/if_match_289617.svg" alt="">
         </label>
+        <label for="nav-toggle" class="nav-toggle-back">
+                <img src="./assets/icons/if_match_289617.svg" alt="">
+            </label>
     </header>
-
  <!------------------------------- 
         Landing
 ---------------------------------->   
 
     <main class="site_wrapper">
-
-
-        <section id="1" class="landing">
+        <section id="home" class="landing">
 
             <div class="logo-container">
                 <img class="logo" src="/assets/logo/logo.svg" alt="Hi my name's Michael Winter and you've discovered my online folio!">
@@ -59,7 +46,7 @@
             </div>
             <!-- button smooth scrolls to about -->
             <div class="landing-button">
-                <a href="#2">
+                <a href="#about">
                     <img src="/assets/icons/arrowbutton.svg" alt="landing page button">
                 </a>
             </div>
@@ -71,13 +58,13 @@
         about
 ---------------------------------->          
 
-        <section id="2" class="about">
+        <section id="about" class="about">
 
             <section class="about-slider-container">
 
-                <header class="about-title">
-                        <h1>Hi, hello, welcome!</h1>
-                </header>
+  
+                <h1 class="about-title">Hi, hello, welcome!</h1>
+           
 
                 <section class="about-slider">
                     
@@ -109,43 +96,27 @@
 <!------------------------------- 
     Projects
 ---------------------------------->     
-
-    <section id="3" class="projects">
-
-        <article class="projects-text">
-            <header class="projects-title">
-                    <h1>Projects</h1>
-            </header>
-
-            <article class="projects-body">
-                <p>From design to development, here's a sneak peak of my most recent work, screened in the swanky outdoor cinema below.</p>
-            </article>
-        </article>
-
+    
+    <section class="projects">
+        <label id=projects for="projects" class="project-anchor"></label>
+        <section class="projects-text">
+            <h1 class="projects-title">Projects</h1>
+            <p class="projects-body">From design to development, here's a sneak peak of my most recent work, screened in the swanky outdoor cinema below.</p>
+        </section>
         <footer class="projects-footer">
-            <section class="cinema">   
-                <img src="/assets/dividers/project-projector.svg" alt="A brief depiction of my latest body of work, displayed within a moonlight cinema">
-            </section> 
 
-            <section class="projects-divider">
-                    <img class="div-img" src="assets/dividers/project-skills.svg" alt="A geometric depiction of a native nomad">
-            </section>
+            <img class="cinema" src="/assets/dividers/project-projector.svg" alt="A brief depiction of my latest body of work, displayed within a moonlight cinema">
+            <img class="projects-divider" src="assets/dividers/project-skills.svg" alt="A geometric depiction of a native nomad">
         </footer>
         
     </section>
     
 
 
-    <section id="4" class="tech-stack">
-
+    <section id="skills" class="tech-stack">
         <article class="tech-text">
-            <header class="stack-title">
-                <h1>Skills Stack</h1>
-            </header>
-
-            <article class="stack-body">
-                <p>Driven by design principles, I use a diverse array of creative tools and developer stacks to create engaging and immersive experiences onlince. See below for my latest stack. </p>
-            </article>
+            <h1 class="stack-title">Skills Stack</h1>
+            <p class="stack-body">Driven by design principles, I use a diverse array of creative tools and developer stacks to create engaging and immersive experiences onlince. See below for my latest stack. </p>
         </article>
 
         <section class="stack-wrapper">
@@ -179,13 +150,10 @@
 
     <!-- Section 6: Contact -->
 
-    <section class="contact-page">
+    <section id="contact" class="contact-page">
 
         <section class="contact-text">
-            <header class="contact-title">
-                    <h1>Get in Touch</h1>
-            </header>
-
+            <h1 class="contact-title">Get in Touch</h1>
             <article class="contact-body">
                 <p>Whether you're looking for a contractor who can hit the ground running, or are on the hunt for a full stack develper with a design focus, drop me a message and I'll get back as soon as I'm able.</p>
             </article>
