@@ -25,79 +25,53 @@
                 <li><a id="nav-link" href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <!-- <div class="label-container"> -->
-            <label for="nav-toggle" class="nav-toggle-label">
-                <div class="icon-front">
-                    <img src="./assets/icons/match.svg">
-                </div>
-                <div class="icon-back">
-                    <img  src="./assets/icons/campfire.svg">
-                </div>
-            </label>
-        <!-- </div> -->
-        <!-- <label for="nav-toggle" class="nav-toggle-back">
-                <img src="./assets/icons/if_match_289617.svg" alt="">
-        </label> -->
+        <label for="nav-toggle" class="nav-toggle-label">
+            <div class="nav-icon-front">
+                <img src="./assets/icons/match.svg">
+            </div>
+            <div class="nav-icon-back">
+                <img  src="./assets/icons/campfire.svg">
+            </div>
+        </label>
     </header>
  <!------------------------------- 
         Landing
 ---------------------------------->   
-
-    <main class="site_wrapper">
+    <main class="site-wrapper">
         <section id="home" class="landing">
-
             <div class="logo-container">
                 <img class="logo" src="/assets/logo/logo.svg" alt="Hi my name's Michael Winter and you've discovered my online folio!">
-        
                 <h2>make ideas, <br>move mountains</h2>
             </div>
-            <!-- button smooth scrolls to about -->
             <div class="landing-button">
                 <a href="#about">
                     <img src="/assets/icons/arrowbutton.svg" alt="landing page button">
                 </a>
             </div>
-            <!-- button smooth scrolls to about -->
-                
         </section>
 
 <!------------------------------- 
         about
 ---------------------------------->          
 
-        <section id="about" class="about">
-
-            <section class="about-slider-container">
-
-  
-                <h1 class="about-title">Hi, hello, welcome!</h1>
-           
-
-                <section class="about-slider">
-                    
-                    <p class="slide" id="about-1">
-                            My name is Michael Winter, a digital designer turned developer with a passion for innovative design, a love of alliteration, and an eagerness to fall head first into full-stack development.   
-                    </p>
-                    <p class="slide" id="about-2">
-                             With an eclectic background in design, marketing and now, development, I have assertained a diverse array of skill to help me adapt to any creative challange. 
-                    </p>
-                    <p class="slide" id="about-3">
-                            You'll find below a short summary of my skills, tech stack and personal porfolio, containing my most recent and relevant body of work from design and marketing sectors.
-                    </p>
-                </section>
-
-                <ul class="slider-nav"> 
-                    <li><a href="#about-1"></a></li>
-                    <li><a href="#about-2"></a></li>
-                    <li><a href="#about-3"></a></li>
-                </ul>
-            </section>
-
-            <footer class="about-footer">
-                <div class="testers"></div>
-                <img src="/assets/dividers/about-projects.svg" alt="An isometric image dipicting a small camp site with coral red tent and burning flame.">
-            </footer>
-
+    <section id="about" class="about">
+        <div class="about-content-container">
+            <h1 class="about-title">Hi, hello, welcome!</h1>
+            <div class="about-slider">
+                <p class="slide" id="about-1">
+                My name is Michael Winter, a digital designer turned developer with a passion for innovative design, a love of alliteration, and an eagerness to fall head first into full-stack development.</p>
+                <p class="slide" id="about-2">With an eclectic background in design, marketing and now, development, I have assertained a diverse array of skill to help me adapt to any creative challange.</p>
+                <p class="slide" id="about-3">You'll find below a short summary of my skills, tech stack and personal porfolio, containing my most recent and relevant body of work from design and marketing sectors.</p>
+            </div>
+            <ul class="slider-nav"> 
+                <li><a href="#about-1"></a></li>
+                <li><a href="#about-2"></a></li>
+                <li><a href="#about-3"></a></li>
+            </ul>
+        </div>
+        <footer class="about-footer">
+            <img src="/assets/dividers/about-projects.svg" alt="An isometric image dipicting a small camp site with coral red tent and burning flame.">
+        </footer>
     </section>
 
 <!------------------------------- 
@@ -174,15 +148,16 @@
                 <textarea rows="4" name="message" placeholder="Please enter your message..." id="message" maxlength="500"></textarea>
                 <button>Submit</button>
             </form>
-        </section>
-        <section class="contact-icons">
-            <a class="github" href=https://github.com/mcwinter07><img src="assets/svg/githubicon.svg" alt="image icon for github"></a>
-            <a class="codepen" href=https://codepen.io/mcwinter07/><img src="assets/svg/codepenicon.svg" alt="image icon for Codepen"></a>
-            <a class="linkedin" href=https://www.linkedin.com/in/mcwinter><img src="assets/svg/linkedinicon.svg" alt="image icon for linkedin"></a>
-            <a class="cv" href=https://drive.google.com/file/d/1y684Y0Ml6FclHndwX7DIUrVTkD-84Am9/view?usp=sharing><img src="assets/svg/cvicon.svg" alt="image icon for Michael Winters CV"></a>
-        </section>
-        
+        </section>    
     </section>
+    <footer class="page-footer">
+            <section class="contact-icons">
+                    <a class="github" href=https://github.com/mcwinter07><img src="assets/svg/githubicon.svg" alt="image icon for github"></a>
+                    <a class="codepen" href=https://codepen.io/mcwinter07/><img src="assets/svg/codepenicon.svg" alt="image icon for Codepen"></a>
+                    <a class="linkedin" href=https://www.linkedin.com/in/mcwinter><img src="assets/svg/linkedinicon.svg" alt="image icon for linkedin"></a>
+                    <a class="cv" href=https://drive.google.com/file/d/1y684Y0Ml6FclHndwX7DIUrVTkD-84Am9/view?usp=sharing><img src="assets/svg/cvicon.svg" alt="image icon for Michael Winters CV"></a>
+                </section>
+        </footer>    
     
 <!-- end -->
     </main>
