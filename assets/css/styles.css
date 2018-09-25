@@ -63,7 +63,7 @@ p {
     "projects"
     "stack"
     "contact"
-    "footer";
+    "site-footer";
 }
 
 /* -----------------------
@@ -430,18 +430,27 @@ nav a {
     background-color: var(--secondary-highlight-color)
 }
 
-.page-footer {
-    grid-area: footer;
 
+
+
+.page-footer {
+    grid-area: site-footer;
+    display: grid;
+    grid-template-areas:
+    ". . ."
+    ". icons .";
+    grid-template-rows: 50px auto;
+    grid-template-columns: 1fr 8fr 1fr;
 }
 
 .contact-icons {
+    grid-area: icons;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
 }
 
 .contact-icons a {
-    width: 20%;
+    min-width: 50px;
     max-width: 100px;
     padding: 0 .5em 0 .5em;
 }
