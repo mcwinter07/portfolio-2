@@ -27,21 +27,21 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--primary-bg-color);
-
 }
 
 h1, h2, label, a {
     font-family: var(--primary-header-font-family);
-    color: var(--primary-font-color);
-    
+    color: var(--primary-font-color);   
 }
 
 h1 {
-    font-size: var(--default-h1-size)
+    font-size: var(--default-h1-size);
+    text-align: center
 }
 
 h2 {
     font-size: var(--default-h2-size);
+    text-align: center
 }
 
 p {
@@ -216,7 +216,6 @@ nav a {
     grid-template-columns: 1fr 8fr 1fr;
     grid-template-rows: 50px auto auto;
     min-height: 100vh;  
-
 }
 
 /* -----------------------
@@ -274,7 +273,7 @@ nav a {
 .projects {
     grid-area: projects;
     display: grid;
-    grid-template-rows: 50px .2fr .5fr;
+    grid-template-rows: 0 .2fr .5fr;
     grid-template-columns: 1fr 8fr 1fr;
     grid-template-areas: 
     ". . ."
@@ -324,10 +323,9 @@ nav a {
     grid-area: stack;
     display: grid;
     grid-template-areas:
-    ". . ."
     ". body ."
     ". tech-stack .";
-    grid-template-rows: 50px auto auto;
+    grid-template-rows: auto auto;
     grid-template-columns: 1fr 8fr 1fr;
     min-height: 100vh;
     text-align: center
@@ -335,10 +333,10 @@ nav a {
 
 .tech-text-container {
     grid-area: body;
-    max-width: 450px;
+    max-width: 400px;
     justify-self: center;
     font-size: var(--default-p-size);
-    margin-bottom: 5vw;
+    margin-bottom: 2vw;
 }
 
 .stack-body {
@@ -348,8 +346,9 @@ nav a {
 .stack-wrapper {
     grid-area: tech-stack;
     align-self: center;
-    width: 70vw;
-    max-width: 450px;
+    width: 60vw;
+    /* max-height: 60vh; */
+    max-width: 500px;
     justify-self: center;
 }
 
@@ -374,10 +373,9 @@ nav a {
 .contact-page {
     display: grid;
     grid-template-areas:
-        ". . . " 
         ". body ."
         ". form . ";
-    grid-template-rows: 50px .1fr 1.8fr; 
+    grid-template-rows: 1fr 1.8fr; 
     grid-template-columns: 1fr 8fr 1fr;
     grid-row-gap: 1em;
     min-height: 100vh;
@@ -446,11 +444,12 @@ nav a {
 .contact-icons {
     grid-area: icons;
     display: flex;
-    justify-content: center;    
+    justify-content: center;   
+    margin-bottom: 2em; 
 }
 
 .contact-icons a {
-    min-width: 50px;
+    min-width: 65px;
     max-width: 100px;
     padding: 0 .5em 0 .5em;
 }
