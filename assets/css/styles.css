@@ -377,15 +377,14 @@ nav a {
         ". . . " 
         ". body ."
         ". form . ";
-    grid-template-rows: 50px .5fr 1fr; 
+    grid-template-rows: 50px .1fr 1.8fr; 
     grid-template-columns: 1fr 8fr 1fr;
     grid-row-gap: 1em;
     min-height: 100vh;
 }
 
-.contact-text {
+.contact-text-container {
     grid-area: body;
-    padding-top: 1em;
     font-size: var(--default-p-size);
     max-width: 450px;
     align-self: flex-end;
@@ -402,7 +401,6 @@ nav a {
     padding: 1em;
     width: 100%;
     max-width: 500px;
-    max-height: 80%
 }
 
 .contact-form {
