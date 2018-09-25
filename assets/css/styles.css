@@ -214,7 +214,7 @@ nav a {
     ". content ."
     "graphic graphic graphic";
     grid-template-columns: 1fr 8fr 1fr;
-    grid-template-rows: 50px 70% 30%;
+    grid-template-rows: 50px auto auto;
     min-height: 100vh;  
 
 }
@@ -338,7 +338,7 @@ nav a {
     max-width: 450px;
     justify-self: center;
     font-size: var(--default-p-size);
-    margin-bottom: 2em;
+    margin-bottom: 5vw;
 }
 
 .stack-body {
@@ -349,7 +349,7 @@ nav a {
     grid-area: tech-stack;
     align-self: center;
     width: 70vw;
-    max-width: 400px;
+    max-width: 450px;
     justify-self: center;
 }
 
@@ -359,6 +359,10 @@ nav a {
     grid-template-rows: auto;
     grid-gap: 2em;
 }
+.badge-container img {
+    max-width: 100%;
+}
+
 
 
 /* -----------------------
