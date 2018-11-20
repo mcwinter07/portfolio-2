@@ -248,7 +248,7 @@ nav a {
     padding-right: 1em;
 }
 
-.slider-nav li input {
+.about-radio {
     appearance: none;
     -webkit-appearance: none;
     border-style: none;
@@ -260,14 +260,16 @@ nav a {
     border-radius: 100%;
     transform: rotate(90deg);
     border: .15em solid #DCD2C6;
-    color: var(--primary-font-color)
+    color: var(--primary-font-color);
+    outline: 0;
+
+}
+.about-radio:checked {
+    outline: 0;
+    background-color: #E8624D;
+    border: .15em solid #E8624D;
 }
   
-  .slider-nav li span:hover {
-    background: #E8624D;
-    border: 0.1em solid #DCD2C6;
-    color: #E8624D;
-  }
 
   .about-footer {
     grid-area: graphic; 

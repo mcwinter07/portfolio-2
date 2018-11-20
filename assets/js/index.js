@@ -14,24 +14,31 @@ function adjustSliderSize() {
 
 window.onresize = adjustSliderSize
 
-// TODO: renderSliderNodes
 
-  // console.log(.id)
-  renderPopularItems = () => {
-    let navigationDoms = ``
-    document.querySelectorAll('.about-slide').forEach(slide => {
-      console.log(slide)
-      navigationDoms +=
-      `
-      <li class="about-list-item">
-        <input type="checkbox" class="about-checkbox" id="${slide.id}-checkbox"/>
-      </li>
-      `
-    })
-    document.getElementById('slider-nav-container').insertAdjacentHTML('afterbegin', navigationDoms)
-  }
+// console.log(.id)
+
+// TODO: renderSliderNodes
+renderSliderNavigation = (sectionClassName, destinationID) => {
+  let navigationDoms = ``
+  document.querySelectorAll(sectionClassName).forEach(slide => {
+    console.log(slide)
+    navigationDoms +=
+    `
+    <li class="about-list-item">
+      <input type="radio" name="about-slider" class="about-radio" id="${slide.id}-radio"/>
+    </li>
+    `
+  })
+  document.getElementById(destinationID).insertAdjacentHTML('afterbegin', navigationDoms)
+}
+
+// TODO: moveSliderPosition
+
+  // onlick, find the index of the nav, * by the position of the window and apply to the css of the element
   
-  renderPopularItems()
+
+  
+  renderSliderNavigation('.about-slide','slider-nav-container')
 
 
   // count how many slides
