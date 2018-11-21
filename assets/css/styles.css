@@ -338,11 +338,11 @@ nav a {
     grid-row-start: 2;
     width: 100%;
     height: 72.5%;
-    background: rgb(224, 154, 67); 
+    /* background: rgb(224, 154, 67);  */
 }
 
 .project-slider-slide {
-    background-color: pink;
+    /* background-color: pink; */
     min-width: 100%;
     height: 100%;
 }
