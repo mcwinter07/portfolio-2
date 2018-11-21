@@ -11,7 +11,8 @@ const addListener = (element, event, callback) => {
   element.addEventListener(event, callback)
 }
 
-// TODO: Bring SliderCainer in as an argument
+
+// TODO: Bring SliderContainer in as an argument
 const detectSliderClick = (e) => {
   mouseDownDetected = true;
   sliderContainer.classList.add('sliderActive')
@@ -28,7 +29,6 @@ const detectSliderLeave = () => {
   mouseDownDetected = false
 }
 
-
 const detectSliderMovement = (e) => {
   if(!mouseDownDetected) return
   e.preventDefault
@@ -42,8 +42,6 @@ const adjustSliderSize = () => {
   sliderWidth = sliderContainer.clientWidth
   return sliderWidth
 }
-
-
 
 const renderSliderNavigation = (sliderClassName, destinationID, navClassName) => {
   let navigationDoms = ``
@@ -60,19 +58,17 @@ const renderSliderNavigation = (sliderClassName, destinationID, navClassName) =>
   document.getElementsByClassName(`${navClassName}`)[0].checked = true
 }
 
-renderSliderNavigation('.about-slide','slider-nav-container', 'about-radio')
+// assume that radio class will defined in the first part of a string and separated by a '-'
 
-
-
-const targetRadio = (radioClassName) => {
-  let radioCollection = document.getElementsByClassName(`${radioClassName}`)
+const targetRadio = (e) => {
+  let radioClass = e.target.classList[0].split('-')[0] + '-radio'
+  return document.getElementsByClassName(radioClass)
 }
 
 const highlightNav = (e) => {
-  console.log(e)
+  let radio = targetRadio(e)
   let sliderWidth = sliderContainer.clientWidth
   sliderScrollX = sliderContainer.scrollLeft
-  let radio = document.getElementsByClassName('about-radio')
   radio[0].checked = true
   if (sliderScrollX > sliderWidth && sliderScrollX < (sliderWidth * 2)) {
     radio[1].checked = true
@@ -81,18 +77,26 @@ const highlightNav = (e) => {
   }
 }
 
+const navByRadio = (radioClass) => {
+  let sliderWidth = sliderContainer.clientWidth
+  sliderScrollX = sliderContainer.scrollLeft
+  document.querySelectorAll(radioClass).forEach((e) => {
+    console.log(e.checked)
+    if(e.checked) {
+      
+    }
+    
+  })
+}
 
-// console.log(document.querySelectorAll('.about-slide'))
-// let testEl = document.querySelectorAll('.about-slide')[0]
-// console.log(testEl)
-// testEl.style.left = sliderWidth
-// // TODO: moveSliderPosition
-
-// onlick, find the index of the nav, * by the position of the window and apply to the css of the element
-  
-
+// const detectRadioCheck = (e) => {
+//   const el =  document.querySelectorAll(radioClass).forEach((e) => { 
+//   e
+//  })
+// }
 //renders nav radio buttons
 
+renderSliderNavigation('.about-slide','slider-nav-container', 'about-radio')
 
 addListener(sliderContainer, 'mousedown', detectSliderClick)
 addListener(sliderContainer, 'mouseup', detectSliderRelease)
@@ -101,6 +105,7 @@ addListener(sliderContainer, 'mousemove', detectSliderMovement)
 addListener(sliderContainer, 'scroll', highlightNav)
 
 
+navByRadio('.about-radio')
 //update the size variable for the slider
 // window.onresize = adjustSliderSize
 
