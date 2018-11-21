@@ -1,25 +1,78 @@
+// vanilla slider JS
 
-const navLinks = document.getElementById('nav-link')
-// const navArray = Array.from(navLinks)
-console.log(navLinks)
-// console.log(navArray)
+const sliderContainer = document.getElementsByClassName('about-slider')[0]
 
-// navLink.addEventListener("click", sayHi())
+let mouseDownDetected = false
+let sliderStartX
+let sliderScrollX
 
+sliderContainer.addEventListener('mousedown', (e) => {
+  mouseDownDetected = true;
+  sliderContainer.classList.add('sliderActive')
+  sliderStartX = e.pageX - sliderContainer.offsetLeft;
+  sliderScrollX = sliderContainer.scrollLeft
+})
 
+sliderContainer.addEventListener('mouseleave', () => {
+  mouseDownDetected = false
+})
 
-// sayHi = () => {
-//   console.log("hi")
+sliderContainer.addEventListener('mouseup', () => {
+  mouseDownDetected = false
+  sliderContainer.classList.remove('sliderActive')
+})
+
+sliderContainer.addEventListener('mousemove', (e) => {
+  if(!mouseDownDetected) return
+  e.preventDefault
+  const mouseDownX = e.pageX - sliderContainer.offsetLeft
+  const distanceFromOrigin = (mouseDownX - sliderStartX) * 2
+  sliderContainer.scrollLeft = sliderScrollX - distanceFromOrigin
+})
+
+// const adjustSliderSize = () => {
+//   let sliderWidth = sliderContainer.clientWidth
+//   sliderWidth = sliderContainer.clientWidth
+//   console.log(sliderWidth)
 // }
 
 
 
-
-
-// getNavLinks = () => {
-//   navLink = document.getElementsByClassName()
+// const renderSliderNavigation = (sectionClassName, destinationID) => {
+//   let navigationDoms = ``
+//   document.querySelectorAll(sectionClassName).forEach(slide => {
+//     console.log(slide)
+//     navigationDoms +=
+//     `
+//     <li class="about-list-item">
+//       <input type="radio" name="about-slider" class="about-radio" id="${slide.id}-radio"/>
+//     </li>
+//     `
+//   })
+//   document.getElementById(destinationID).insertAdjacentHTML('afterbegin', navigationDoms)
 // }
 
-//TODO: create an event listener for each click
 
-// TODO: create a function that will remove the checked status of the checkbox
+// console.log(document.querySelectorAll('.about-slide'))
+// let testEl = document.querySelectorAll('.about-slide')[0]
+// console.log(testEl)
+// testEl.style.left = sliderWidth
+// // TODO: moveSliderPosition
+
+//   // onlick, find the index of the nav, * by the position of the window and apply to the css of the element
+  
+
+//renders nav radio buttons
+renderSliderNavigation('.about-slide','slider-nav-container')
+
+//update the size variable for the slider
+window.onresize = adjustSliderSize
+
+
+
+
+
+
+// const sliderNav = document.getElementsByClassName('slider-nav')[0]
+//offsetlef
+

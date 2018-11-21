@@ -7,7 +7,7 @@
     <title>Michael Winter | Graphic Designer | Developing Developer | Digital Nomad</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/assets/css/styles.css"><script src="./assets/js/index.js"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css"><script async src="./assets/js/index.js"></script>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         Navigation
 ---------------------------------->   
     <header class="nav-container">
-        <input id="nav-toggle" class="nav-toggle" type="checkbox" name="hamburger" id="">
+        <input id="nav-toggle" class="nav-toggle" type="checkbox" name="hamburger">
         <nav>
             <ul id="nav-link-container">
                 <li><a id="nav-link" href="#home">Home</a></li>
@@ -58,15 +58,18 @@
         <div class="about-content-container">
             <h1 class="about-title">Hi, hello, welcome!</h1>
             <div class="about-slider">
-                <p class="slide" id="about-1">
-                My name is Michael Winter, a digital designer turned developer with a passion for innovative design, a love of alliteration, and an eagerness to fall head first into full-stack development.</p>
-                <p class="slide" id="about-2">With an eclectic background in design, marketing and now, development, I have assertained a diverse array of skill to help me adapt to any creative challange.</p>
-                <p class="slide" id="about-3">You'll find below a short summary of my skills, tech stack and personal porfolio, containing my most recent and relevant body of work from design and marketing sectors.</p>
+                <div class="about-slide">
+                    <p>My name is Michael Winter, a digital designer turned developer with a passion for innovative design, a love of alliteration, and an eagerness to fall head first into full-stack development.</p>
+                </div>
+                <div class="about-slide">
+                    <p>With an eclectic background in design, marketing and now, development, I have assertained a diverse array of skill to help me adapt to any creative challange.</p>
+                </div>
+                <div class="about-slide">
+                    <p>You'll find below a short summary of my skills, tech stack and personal porfolio, containing my most recent and relevant body of work from design and marketing sectors.</p>
+                </div>
+
             </div>
-            <ul class="slider-nav"> 
-                <li><a href="#about-1"></a></li>
-                <li><a href="#about-2"></a></li>
-                <li><a href="#about-3"></a></li>
+            <ul class="slider-nav" id="slider-nav-container"> 
             </ul>
         </div>
         <footer class="about-footer">
@@ -83,8 +86,12 @@
             <p class="projects-body">From design to development, kick off your shoes, get comfy and take a sneak peak of my most recent professional and personal projects in the cinema below.</p>
         </div>
         <footer class="projects-footer">
-            <h2 class="project-insert">COMING SOON</h2>            
             <img class="project-cinema" src="/assets/dividers/project-projector.svg" alt="A brief depiction of my latest body of work, displayed within a moonlight cinema">
+            <div class="project-slider-container">
+                <a href="" class="project-slider-slide project-1">coming soon</a>
+                <a href="" class="project-slider-slide project-2">test 2</a>
+                <a href="" class="project-slider-slide project-3">test 3</a>
+            </div>         
             <img class="projects-divider" src="assets/dividers/project-skills.svg" alt="A geometric depiction of a native nomad">
         </footer>
     </section>
@@ -140,3 +147,4 @@
 <!-- end -->
     </main>
 </body>
+
