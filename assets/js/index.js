@@ -13,9 +13,6 @@ const addListener = (element, event, callback) => {
 
 const addMultListener = (array, event, callback) => {
   array.forEach((e) => {
-    console.log(e)
-    console.log(event)
-    console.log(callback)
     e.addEventListener(event, callback)
   })
 }
@@ -73,10 +70,7 @@ const targetNavRadio = (e) => {
   let radioClass = e.target.classList[0].split('-')[0] + '-radio'
   return document.getElementsByClassName(radioClass)
 }
-const targetNavElement = (e) => {
-  let navClass = e.target.name
-  return navClass
-}
+
 
 const highlightNav = (e) => {
   let radio = targetNavRadio(e)
@@ -90,21 +84,23 @@ const highlightNav = (e) => {
   }
 }
 
-const navByRadio = (e) => {
-  let navRadioArray = targetNavRadio(e)
-  sliderScrollX = sliderContainer.scrollLeft
-  for (let i = 0; i < navRadioArray.length; i++) {
-    if(navRadioArray[i].checked) {
-      let multiplier = i + 0
-      let sliderWidth = sliderContainer.clientWidth
-      sliderContainer.scrollLeft = sliderWidth * multiplier
-    }
-  }
+const clickTest = (e) => {
+  console.log(e)
+  console.log('i have been recieved')
 }
 
-clickTest = (e) => {
-  console.log(e)
-  console.log('i have been clicked')
+
+const navByRadio = (e) => {
+  sliderWidth = sliderContainer.clientWidth
+  let navRadioArray = targetNavRadio(e)
+  
+  for (let i = 0; i < navRadioArray.length; i++) {
+    if(navRadioArray[i].checked) {
+      let multiplier = 0
+      multiplier += i
+      return sliderContainer.scrollLeft = sliderWidth * multiplier
+    }
+  }
 }
 
 renderSliderNavigation('.about-slide','slider-nav-container', 'about-radio')
@@ -118,11 +114,6 @@ addListener(sliderContainer, 'mouseleave', detectSliderLeave)
 addListener(sliderContainer, 'mousemove', detectSliderMovement)
 addListener(sliderContainer, 'scroll', highlightNav)
 
-// adds multiple listeners from a node list.
-addMultListener(navRadios, 'mousedown', navByRadio)
+// takes a nodelist as the first argument, and event as the second, and a callback as the third. Iterates through and applies multiple listeners through a forEach loop
 
-// const addMultListener = (array, element, event, callback) => {
-//   array.forEach(e => {
-//     e.addListener(element, event, callback)
-//   })
-// }
+addMultListener(navRadios, 'change', navByRadio)
