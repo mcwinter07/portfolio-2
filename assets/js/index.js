@@ -58,15 +58,20 @@ const renderSliderNavigation = (sliderClassName, destinationID, navClassName) =>
   document.getElementsByClassName(`${navClassName}`)[0].checked = true
 }
 
+// target the nav container and links back to the radio
 // assume that radio class will defined in the first part of a string and separated by a '-'
 
-const targetRadio = (e) => {
+const targetNavRadio = (e) => {
   let radioClass = e.target.classList[0].split('-')[0] + '-radio'
   return document.getElementsByClassName(radioClass)
 }
+const targetNavElement = (e) => {
+  let navClass = e.target.name
+  return navClass
+}
 
 const highlightNav = (e) => {
-  let radio = targetRadio(e)
+  let radio = targetNavRadio(e)
   let sliderWidth = sliderContainer.clientWidth
   sliderScrollX = sliderContainer.scrollLeft
   radio[0].checked = true
@@ -77,26 +82,31 @@ const highlightNav = (e) => {
   }
 }
 
-const navByRadio = (radioClass) => {
+const navByRadio = (e) => {
+  let navRadio = targetNavRadio(e)
   let sliderWidth = sliderContainer.clientWidth
   sliderScrollX = sliderContainer.scrollLeft
-  document.querySelectorAll(radioClass).forEach((e) => {
-    console.log(e.checked)
-    if(e.checked) {
-      
+  for (let i = 0; i < navRadio.length; i++) {
+    console.log(navRadio[i].checked)
+    if(navRadio[i].checked) {
+      let multiplier = i + 0
+      console.log(multiplier * sliderWidth)
+      sliderScrollX = sliderScrollX * multiplier
+      sliderContainer.scrollLeft = sliderScrollX
     }
-    
-  })
+  }
 }
 
-// const detectRadioCheck = (e) => {
-//   const el =  document.querySelectorAll(radioClass).forEach((e) => { 
-//   e
-//  })
-// }
-//renders nav radio buttons
+clickTest = (e, arg) => {
+  console.log(e)
+  console.log('i have been clicked')
+  console.log(arg)
+}
 
 renderSliderNavigation('.about-slide','slider-nav-container', 'about-radio')
+
+const navRadio = document.querySelectorAll('.about-radio')[0]
+console.log(navRadio)
 
 addListener(sliderContainer, 'mousedown', detectSliderClick)
 addListener(sliderContainer, 'mouseup', detectSliderRelease)
@@ -104,12 +114,11 @@ addListener(sliderContainer, 'mouseleave', detectSliderLeave)
 addListener(sliderContainer, 'mousemove', detectSliderMovement)
 addListener(sliderContainer, 'scroll', highlightNav)
 
+addListener(navRadio, 'click', navByRadio)
 
-navByRadio('.about-radio')
+// navByRadio('.about-radio')
 //update the size variable for the slider
 // window.onresize = adjustSliderSize
-
-
 
 
 
