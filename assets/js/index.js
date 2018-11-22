@@ -1,6 +1,6 @@
 // vanilla slider JS
 
-const aboutSlider = document.getElementsByClassName('about-slider')[0]
+const sliderContainer = document.getElementsByClassName('about-slider')[0]
 
 let mouseDownDetected = false
 let touchStartDetected = false
@@ -19,6 +19,7 @@ const addMultListener = (array, event, callback) => {
 }
 
 
+// TODO: Bring SliderContainer in as an argument
 const detectSliderClick = (e) => {
   currentContainer = e.target.parentNode
   mouseDownDetected = true;
@@ -74,18 +75,31 @@ const targetNavRadio = (e) => {
 }
 
 //FIXME: Fix slider visual gitch
+  // glitch originates from the fact it listen for a scrol and not click
 //FIXME: Accomotate dynamic slide pop
   //current can only hard code index num
 const highlightNav = (e) => {
+  let thisContainer = e.target
+  console.log('container')
+  console.log(thisContainer.clientWidth)
   let radio = targetNavRadio(e)
-  let sliderWidth = currentContainer.clientWidth
-  sliderScrollX = currentContainer.scrollLeft
+  let sliderWidth = thisContainer.clientWidth
+  sliderScrollX = sliderContainer.scrollLeft
+  console.log('scroll x')
+  console.log(sliderScrollX)
   radio[0].checked = true
 
-  if (sliderScrollX > sliderWidth && sliderScrollX < (sliderWidth * 2)) {
+  if (sliderScrollX > sliderWidth - 1 && sliderScrollX < (sliderWidth * 2) - 1) {
     radio[1].checked = true
-  } else if (sliderScrollX > (sliderWidth * 2)) {
+  } else if (sliderScrollX > (sliderWidth * 2) -1 ) {
     radio[2].checked = true
+
+    console.log('container')
+    console.log(thisContainer.clientWidth * 2)
+
+
+    console.log('scroll x')
+    console.log(sliderScrollX)
   }
 }
 
@@ -96,14 +110,14 @@ const clickTest = (e) => {
 
 
 const navByRadio = (e) => {
-  sliderWidth = currentContainer.clientWidth
+  sliderWidth = sliderContainer.clientWidth
   let navRadioArray = targetNavRadio(e)
   
   for (let i = 0; i < navRadioArray.length; i++) {
     if(navRadioArray[i].checked) {
       let multiplier = 0
       multiplier += i
-      return currentContainer.scrollLeft = sliderWidth * multiplier
+      return sliderContainer.scrollLeft = sliderWidth * multiplier
     }
   }
 }
@@ -113,11 +127,11 @@ renderSliderNavigation('.about-slide','slider-nav-container', 'about-radio')
 const navRadios = document.querySelectorAll('.about-radio')
 const navRadio = document.querySelectorAll('.about-radio')
 
-addListener(aboutSlider, 'mousedown', detectSliderClick)
-addListener(aboutSlider, 'mouseup', detectSliderRelease)
-addListener(aboutSlider, 'mouseleave', detectSliderLeave)
-addListener(aboutSlider, 'mousemove', detectSliderMovement)
-addListener(aboutSlider, 'scroll', highlightNav)
+addListener(sliderContainer, 'mousedown', detectSliderClick)
+addListener(sliderContainer, 'mouseup', detectSliderRelease)
+addListener(sliderContainer, 'mouseleave', detectSliderLeave)
+addListener(sliderContainer, 'mousemove', detectSliderMovement)
+addListener(sliderContainer, 'scroll', highlightNav)
 
 // takes a nodelist as the first argument, and event as the second, and a callback as the third. Iterates through and applies multiple listeners through a forEach loop
 
