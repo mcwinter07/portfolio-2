@@ -278,6 +278,8 @@ nav a {
     white-space: pre-wrap;
     scroll-snap-type: x proximity;
     user-select: none;
+    pointer-events: none
+
 }
 
 .slider-nav {
@@ -286,7 +288,6 @@ nav a {
 
 .slider-nav li {
     padding-right: 1em;
-    
 }
 
 .about-radio {
