@@ -118,8 +118,8 @@ addListener(sliderContainer, 'mouseleave', detectSliderLeave)
 addListener(sliderContainer, 'mousemove', detectSliderMovement)
 addListener(sliderContainer, 'scroll', highlightNav)
 
-// addListener(navRadio, 'click', navByRadio)
-addMultListener(navRadios, 'click', navByRadio)
+// adds multiple listeners from a node list.
+addMultListener(navRadios, 'mousedown', navByRadio)
 
 // const addMultListener = (array, element, event, callback) => {
 //   array.forEach(e => {
