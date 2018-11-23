@@ -38,15 +38,15 @@
         Landing
 ---------------------------------->   
     <main class="site-wrapper">
-        <section id="home" class="landing">
-            <div class="logo-container">
-                <img class="logo" src="/assets/logo/logo.svg" alt="Hi my name's Michael Winter and you've discovered my online folio!">
-                <h2>make ideas, <br>move mountains</h2>
-            </div>
-            <div class="landing-button">
-                <a href="#about">
-                    <img src="/assets/icons/arrowbutton.svg" alt="landing page button">
-                </a>
+        <section id="home" class="landing page-section">
+            <div class="landing-content-container">
+                <object class="logo-icon" alt="Hi my name's Michael Winter and I pleased to welcome you to my online folio. You are currently selecting my logo icon, an image inspired by the nomadic lifestyle of digital developers in the modern age." type="image/svg+xml" data="./assets/logo/logo.svg" ></object>
+                <h2 class="moto">make ideas, <br>move mountains</h2>
+                <div class="landing-button">
+                        <input href="#about" id="landing-check" type="checkbox">
+                        <!-- <div class="pulse-button"></div> -->
+                        <label for="landing-check"><object href="#about" alt="landing page button" alt="landing page button" type="image/svg+xml" data="./assets/icons/pick-icon.svg" ></object></label>
+                </div>
             </div>
         </section>
 
@@ -54,7 +54,7 @@
         about
 ---------------------------------->          
 
-    <section id="about" class="about">
+    <section id="about" class="about page-section">
         <div class="about-content-container">
             <h1 class="about-title">Hi, hello, welcome!</h1>
             <div class="about-slider">
@@ -68,7 +68,7 @@
                     <p>You'll find below a short summary of my skills, tech stack and personal porfolio, containing my most recent and relevant body of work from design and marketing sectors.</p>
                 </div>
             </div>
-            <ul class="slider-nav" id="slider-nav-container"> 
+            <ul class="slider-nav" id="about-nav-container"> 
             </ul>
         </div>
         <footer class="about-footer">
@@ -79,24 +79,33 @@
 <!------------------------------- 
     Projects
 ---------------------------------->     
-    <section id=projects class="projects">
+    <section id=projects class="projects page-section">
         <div class="projects-text-container">
             <h1 class="projects-title">Projects</h1>
             <p class="projects-body">From design to development, kick off your shoes, get comfy and take a sneak peak of my most recent professional and personal projects in the cinema below.</p>
         </div>
         <footer class="projects-footer">
-            <img class="project-cinema" src="/assets/dividers/project-projector.svg" alt="A brief depiction of my latest body of work, displayed within a moonlight cinema">
             <div class="project-slider-container">
-                <a href="" class="project-slider-slide project-1">coming soon</a>
-                <a href="" class="project-slider-slide project-2">test 2</a>
-                <a href="" class="project-slider-slide project-3">test 3</a>
-            </div>         
+                <div class="project-slider">
+                    <div class="project-slide">
+                        <a class="project-link"></a>
+                    </div>
+                    <div class="project-slide">
+                        <a class="project-link"></a>
+                    </div>
+                    <div class="project-slide">
+                        <a class="project-link"></a>
+                    </div>
+                </div>
+                <ul class="slider-nav" id="project-nav-container"></ul>
+            </div>    
+            <img class="project-cinema" src="/assets/dividers/project-projector.svg" alt="A brief depiction of my latest body of work, displayed within a moonlight cinema">     
             <img class="projects-divider" src="assets/dividers/project-skills.svg" alt="A geometric depiction of a native nomad">
         </footer>
     </section>
     
 
-    <section id="skills" class="skill-stack">
+    <section id="skills" class="skill-stack page-section">
         <div class="tech-text-container">
             <h1 class="stack-title">Skills Stack</h1>
             <p class="stack-body">From creative tools to frontend frameworks, see some of the lastest skills and tech stacks I use to create immersive and engaging experiences online. </p>
@@ -117,7 +126,7 @@
 
     <!-- Section 6: Contact -->
 
-    <section id="contact" class="contact-page">
+    <section id="contact" class="contact-page page-section">
 
         <div class="contact-text-container">
             <h1 class="contact-title">Get in Touch</h1>

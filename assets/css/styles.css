@@ -9,9 +9,8 @@
     --default-h1-size: 2em;
     --default-h2-size: 1.5em;
     --default-p-size: 1em;
-    --max-slider-width: 450px;
-    color: #E8624D
 }
+
 
 /* ---------------
     page styling 
@@ -71,7 +70,7 @@ p {
 }
 
 /* -----------------------
-        Navigayion
+        Navigation
 ------------------------- */
 header {
     position: fixed;
@@ -178,67 +177,153 @@ nav a {
 ------------------------- */
 
 .landing {
-    z-index: 1;
-    grid-area: landing;
-    display: grid;
+    display: flex;
     justify-content: center;
-    min-height: 100vh;
+    height: 100vh;
 }
 
-.logo-container {
+.landing-content-container {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    max-width: 450px;
-    width: 80vw;
-    align-self: center;
-    text-align: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 20% 2em 0 2em;
+    max-width: 500px;
 }
 
+.moto {
+    margin-bottom: 60%;
+}
 .landing-button {
-    width: 15vw;
-    max-width: 70px;
-    align-self: center;
-    justify-self: center
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
 }
 
-/* -----------------------
-        landing 
-------------------------- */
+.landing-button object {
+    cursor: pointer;
+    pointer-events: none;
+    display: flex;
+    margin-bottom: -2em;
+    width: 4em;
+    height: 4em;
+}
+.landing-button input[type=checkbox] {
+    display: none;
+}
+
+.landing-button input[type=checkbox]:checked ~ label object{
+    transform: rotate(360deg);
+    transition:  all 0.6s ease;
+    transform-style: flat;
+}
+
+/* pulse button */
+/* .landing-button {
+    margin-bottom: -2em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    padding-left: 4.5em;
+} */
+/* 
+.pulse-button {
+    position: relative;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: #FFF7EA;
+    border-radius: 50%;
+    line-height: 84px
+}
+
+.pulse-button:before,
+.pulse-button:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border: 4px solid #E8624D;
+    animation: animate 3s linear infinite
+} */
+
+/* @keyframes animate
+{
+    0%
+    {
+        transform: scale(0.5);
+        opacity: 0
+    }
+    50%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        transform: scale(1.2);
+        opacity: 0
+    }
+} */
 
 /* -----------------------
         About 
 ------------------------- */
+
 .about {
-    z-index: 2;
-    grid-area: about;
-    display: grid;
+    display: flex;
     flex-direction: column;
-    grid-template-areas:
-    ". . ."
-    ". content ."
-    "graphic graphic graphic";
-    grid-template-columns: 1fr 8fr 1fr;
-    grid-template-rows: 50px auto auto;
-    min-height: 100vh;  
+    justify-content: space-between;
+    align-content: center;
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+.about-title {
+    text-align: left;
+}
+
+.about-footer {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.about-footer img {
+    width: 100%;
+    height: 100%;
+    
 }
 
 /* -----------------------
         about slider 
 ------------------------- */
 
-.about-content-container{
+.about-content-container {
+    box-sizing: border-box;
     display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    padding: 0 2em 0 2em;
+    margin-top: 20%;
+    max-width: 500px;
     flex-direction: column;
-    justify-self: center;
-    grid-area: content;
-    scroll-snap-type: x proximity
-
+    scroll-snap-type: x mandatory;
 }
 
 .about-slider {
-    height: 100%;
-    width: 100%;
-    max-width: var(--max-slider-width);
+    max-width: 450px;
     position: relative;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -260,13 +345,11 @@ nav a {
 .sliderActive {
     cursor: -webkit-grabbing;
     cursor: grabbing;
-    scroll-snap-type: x proximity
-
+    scroll-snap-type: x mandatory
 }
 
 .about-slide {
     width: 100%;
-    height: 100%;
     display: inline-flex;
     /* scroll snap */
     scroll-snap-align: start; /* latest (Chrome 69+) */  
@@ -276,10 +359,9 @@ nav a {
 
 .about-slide p {
     white-space: pre-wrap;
-    scroll-snap-type: x proximity;
+    scroll-snap-type: x mandatory;
     user-select: none;
     pointer-events: none
-
 }
 
 .slider-nav {
@@ -312,16 +394,12 @@ nav a {
     background-color: #E8624D;
     border: .15em solid #E8624D;
 }
-  
 
-  .about-footer {
-    grid-area: graphic; 
-    align-self: flex-end;   
-}
 
 /* -----------------------
         Projects 
 ------------------------- */
+
 .projects {
     grid-area: projects;
     display: grid;
@@ -349,6 +427,8 @@ nav a {
 
 .project-slider-container {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
     align-self: flex-end;
     z-index: -15;
@@ -356,26 +436,90 @@ nav a {
     grid-row-start: 2;
     width: 100%;
     height: 72.5%;
-    /* background: rgb(224, 154, 67);  */
+    background: dodgerblue;
 }
 
-.project-slider-slide {
-    /* background-color: pink; */
-    min-width: 100%;
+#project-nav-container {
+    margin-bottom: 7.5%;
+    height: 5%;
+    grid-column: 1/4;
+    display: flex;
+    justify-content: center;
+    z-index: 25;
+}
+
+.project-slider {
+    margin-top: 7.5%;
+    height: 70%;
+    width: 100%;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    overflow: -moz-scrollbars-none;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    will-change: transform;
+    transition: all 0.2s;
+    /* scroll snap + fallbacks */
+    scroll-snap-type: x mandatory; /* Chrome Canary */  
+    scroll-snap-type: mandatory; /* Firefox */  
+    -ms-scroll-snap-type: mandatory; /* IE/Edge */  
+    -webkit-scroll-snap-type: mandatory; /* Safari */  
+    -webkit-scroll-snap-destination: 0% 0%;  
+    -webkit-overflow-scrolling: touch; /* important for iOS */  
+}
+
+.project-slide {
+    width: 100%;
     height: 100%;
+    display: inline-flex;
+    /* scroll snap */
+    scroll-snap-align: start; /* latest (Chrome 69+) */  
+    scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */  
+    -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */  
+    background-color: aqua
+}
+
+.project-slide:nth-child(2) {
+    background-color: purple;
+}
+
+.project-slide a {
+    white-space: pre-wrap;
+    scroll-snap-type: x mandatory;
+    user-select: none;
+    pointer-events: none;
+}
+
+.project-radio {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border-style: none;
+    display: flex;
+    width: 1em;
+    height: 1em;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    transform: rotate(90deg);
+    border: .15em solid #DCD2C6;
+    color: var(--primary-font-color);
+    outline: 0;
+}
+
+.project-radio:checked {
+    outline: 0;
+    background-color: #E8624D;
+    border: .15em solid #E8624D;
 }
 
 .project-cinema {
     grid-row-start: 2;
     grid-column: 1/4;
     z-index: 5;
-} 
-
-.project-2 {
-    background-color: aquamarine;
-}
-.project-3 {
-    background-color: purple;
+    pointer-events: none;
 }
 
 .projects-divider {
@@ -523,3 +667,29 @@ nav a {
     max-width: 100px;
     padding: 0 .5em 0 .5em;
 }
+
+
+/* prep for site wide scroll snap */
+
+/* .site-wrapper {
+    height: 100%;
+    white-space: y nowrap;
+    scroll-snap-type: y mandatory;
+    overflow-y: hidden;
+    will-change: transform;
+    transition: all 0.2s;
+    scroll-snap-type: mandatory;  
+    -ms-scroll-snap-type: mandatory;  
+    -webkit-scroll-snap-type: mandatory; 
+    -webkit-scroll-snap-destination: 0% 0%;  
+    -webkit-overflow-scrolling: touch; 
+}
+
+.page-section {
+    width: 100%;
+    
+    scroll-snap-align: start; 
+    scroll-snap-coordinate: 0% 0%; 
+    -webkit-scroll-snap-coordinate: 0% 0%; 
+
+} */
