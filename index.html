@@ -88,19 +88,21 @@
             <div class="project-slider-container">
                 <div class="project-slider">
                     <div class="project-slide">
-                        <video class="project-slide" width="100%" height="100%" controls>
-                                <source class="project-media" src="./assets/media/intro_reel.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
+                        <video autoplay loop muted playsinline class="project-media" id="intro-animation" src="./assets/media/intro_reel.mp4" type="video/mp4"class="project-media" width="100%" height="100%">
+                            Your browser does not support the video tag.
                         </video>
                     </div>
-                    <div class="project-slide">
-                            <object class="project-media" alt="landing page button" alt="landing page button" type="image/svg+xml" data="./assets/media/pitchr-icon-lettermark.svg"></object>
+                    <div class="project-slide" id="pitchr">
+                            <object class="project-media"  alt="landing page button" alt="landing page button" type="image/svg+xml" data="./assets/media/pitchr-icon-lettermark.svg"></object>
                     </div>
-                    <div class="project-slide">
+                    <div class="project-slide" id="chicken-in">
                             <object class="project-media" alt="landing page button" alt="landing page button" type="image/svg+xml" data="./assets/media/chickenin-icon-logo.svg"></object>
                     </div>
-                    <div class="project-slide" background-image="./assets/media/404-pun">
-                        <!-- <img class="project-media" src="./assets/media/404-pun.png" alt=""> -->
+                    <div class="project-slide" id="design-folio" >
+                        <!-- -->
+                    </div>
+                    <div class="project-slide" id="end-of-slide" background-image="./assets/media/404-pun">
+                        <!-- <img class="project-media" src="./assets/media/404-pun.png" alt="">  -->
                     </div>
                 </div>
                 <ul class="slider-nav" id="project-nav-container"></ul>
