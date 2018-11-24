@@ -499,6 +499,16 @@ nav a {
     user-select: none;
     pointer-events: none;
 }
+.play-button {
+    top: 20%;
+    position: absolute;
+    display: block;
+    opacity: .5;
+}
+
+.video-active {
+    display: none;
+}
 
 .project-radio {
     cursor: pointer;
