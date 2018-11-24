@@ -1,6 +1,7 @@
 :root {
     --primary-bg-color: #003D58;
     --secondary-bg-color: #849EA8;
+    --tertiary-bg-colour: #012E35;
     --primary-font-color: #FFF7EA;
     --primary-highlight-color: #FFF7EA;
     --secondary-highlight-color: #E8624D;
@@ -20,6 +21,7 @@
     scroll-behavior: smooth;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 *::-webkit-scrollbar {
@@ -27,8 +29,6 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: var(--primary-bg-color);
 }
 
@@ -39,7 +39,8 @@ h1, h2, label, a {
 
 h1 {
     font-size: var(--default-h1-size);
-    text-align: center
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 h2 {
@@ -86,7 +87,7 @@ nav {
     display: grid;
     grid-area: nav;
     position: absolute;
-    background-color: var(--secondary-highlight-color);
+    background-color: var(--tertiary-bg-colour);
     text-align: center;
     width: 100%;
     height: 100vh;
@@ -196,52 +197,20 @@ nav a {
 .moto {
     margin-bottom: 60%;
 }
-.landing-button {
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
 
-}
-
-.landing-button object {
-    cursor: pointer;
-    pointer-events: none;
-    display: flex;
-    margin-bottom: -2em;
-    width: 4em;
-    height: 4em;
-}
-.landing-button input[type=checkbox] {
-    display: none;
-}
-
-.landing-button input[type=checkbox]:checked ~ label object{
-    transform: rotate(360deg);
-    transition:  all 0.6s ease;
-    transform-style: flat;
-}
 
 /* pulse button */
-/* .landing-button {
-    margin-bottom: -2em;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
-    padding-left: 4.5em;
-} */
-/* 
+
 .pulse-button {
     position: relative;
     text-align: center;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background: #FFF7EA;
+    left: 50%;
+    bottom: -50px;
+    width: 3em;
+    height: 3em;
+    background: var(--secondary-highlight-color);
     border-radius: 50%;
-    line-height: 84px
 }
 
 .pulse-button:before,
@@ -254,11 +223,26 @@ nav a {
     right: -20px;
     top: -20px;
     bottom: -20px;
-    border: 4px solid #E8624D;
-    animation: animate 3s linear infinite
-} */
+    border: 2px solid #E8624D;
+    animation: pulseButton 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: infinite;
+}
 
-/* @keyframes animate
+.landing-checkbox:checked + div, div:before, div:after {
+    position: fixed;
+    pointer-events: none;
+    display: inline-block;
+    left: 1em;
+    top: 1em;
+    right: 0;
+    animation: pulseButton 10s cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: infinite;
+}
+
+
+
+/* pulse animate */
+@keyframes pulseButton
 {
     0%
     {
@@ -267,14 +251,21 @@ nav a {
     }
     50%
     {
+        transform: scale(1);
         opacity: 1;
+    }
+    90%{
+        transform: scale(1);
+        opacity: 0;
     }
     100%
     {
-        transform: scale(1.2);
+        transform: scale(0);
         opacity: 0
     }
-} */
+}
+
+
 
 /* -----------------------
         About 
