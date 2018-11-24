@@ -140,3 +140,14 @@ addMultListener(projectRadios, 'change', navByRadio)
 
 
 // addMultListener(projectLink, 'mouseover', handleProjectLinks)
+const videoController = (e) => {
+  const video = e.target
+  if (video.paused) { 
+    video.play() 
+  } else { 
+    video.pause()
+  }  
+}
+
+addListener(document.querySelector("#intro-animation"), 'mousedown', videoController)
+
