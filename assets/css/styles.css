@@ -197,8 +197,10 @@ nav a {
     height: 100%;
     width: 100%;
     padding: 40% 10% 0 10%;
-    max-width: 600px;
+    max-width: 1000px;
 }
+
+/* TODO: Add media queries for text to inc size on destop */
 
 .moto {
     margin-top:1em;
@@ -408,6 +410,7 @@ nav a {
 
 .slider-nav {
     display: flex;
+    margin-top: 1em;
 }
 
 .slider-nav li {
@@ -445,7 +448,7 @@ nav a {
 .projects {
     grid-area: projects;
     display: grid;
-    grid-template-rows: auto;
+    grid-template-rows: 2em repeat(3, auto);
     grid-template-columns: 1fr 8fr 1fr;
     grid-template-areas: 
     ". . ."
@@ -459,6 +462,7 @@ nav a {
     text-align: left;
     max-width: 450px;
     justify-self: center;
+    margin-bottom: 3em;
 }
 
 .projects-footer {
@@ -603,11 +607,13 @@ nav a {
     grid-area: stack;
     display: grid;
     grid-template-areas:
+    ". . ."
     ". body ."
     ". tech-stack .";
-    grid-template-rows: auto auto;
+    grid-template-rows: 2em repeat(2, auto);
     grid-template-columns: 1fr 8fr 1fr;
-    text-align: center
+    text-align: center;
+    min-height: 100vh;
 }
 
 .tech-text-container {
@@ -615,7 +621,7 @@ nav a {
     max-width: 400px;
     justify-self: center;
     font-size: var(--default-p-size);
-    margin-bottom: 2vw;
+    margin-bottom: 2em;
 }
 
 .stack-body {
@@ -625,7 +631,7 @@ nav a {
 .stack-wrapper {
     grid-area: tech-stack;
     align-self: center;
-    width: 60vw;
+    width: 100%;
     max-width: 500px;
     justify-self: center;
 }
@@ -651,9 +657,10 @@ nav a {
 .contact-page {
     display: grid;
     grid-template-areas:
+        ". . . "
         ". body ."
         ". form . ";
-    grid-template-rows: 1fr 1.8fr; 
+    grid-template-rows: 2em auto auto; 
     grid-template-columns: 1fr 8fr 1fr;
     grid-row-gap: 1em;
 }
@@ -665,6 +672,7 @@ nav a {
     align-self: flex-end;
     justify-self: center;
 }
+
 .contact-title {
     font-size: var(--default-h1-size);
 }
@@ -689,6 +697,7 @@ nav a {
     padding: 1em;
     border: none;
 }
+
 .contact-form textarea {
     margin-top: 1em; 
     padding: 1em;
@@ -705,13 +714,15 @@ nav a {
     background-color: var(--secondary-highlight-color)
 }
 
+/* Footer */
+
 .page-footer {
     grid-area: site-footer;
     display: grid;
     grid-template-areas:
     ". . ."
     ". icons .";
-    grid-template-rows: 50px auto;
+    grid-template-rows: 2em auto;
     grid-template-columns: 1fr 8fr 1fr;
 }
 
