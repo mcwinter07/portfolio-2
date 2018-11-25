@@ -172,6 +172,12 @@ nav a {
 .nav-container a:active ~ nav {
     opacity: 0;
 }
+
+.nav-link:hover {
+    transition: 1s;
+    font-size: 200%;
+    color: var(--secondary-highlight-color)
+}
 /* nav overlay animation end */
 
 /* -----------------------
@@ -190,20 +196,21 @@ nav a {
     justify-content: space-between;
     height: 100%;
     width: 100%;
-    padding: 20% 0 0 0;
-    max-width: 500px;
+    padding: 40% 10% 0 10%;
+    max-width: 600px;
 }
 
 .moto {
+    margin-top:1em;
     margin-bottom: 60%;
 }
+
+/* pulse button */
 
 .landing-checkbox {
     display: none;
 }
 
-
-/* pulse button */
 .pulse-button {
     position: absolute;
     text-align: center;
@@ -232,6 +239,7 @@ nav a {
 }
 
 .landing-checkbox:checked + div {
+    z-index: -99;
     position: fixed;
     top: 2.5em;
     left: 2.5em;
@@ -239,50 +247,54 @@ nav a {
     animation: movePulse 1s linear;
 }
 
+/* pulse animate */
 @keyframes movePulse
 {
     0%
     {
+        transform: scale(2);
+        margin-left: -1.5em;
         left: 50%;
         top: 100%;
     }
-    50% {
+    2% {
+        transform: scale(1);
+        margin-left: -1.5em;
+        left: 50%;
+        top: 100%;
+    }
+    
+    4%{
+        transform: scale(2);
+    }
+
+    10% {
+        transform: scale(.5);
+    }
+
+    49% { 
         opacity: 1;
+        transform: scale(.5);
     }
-    100%
-    {
-        opacity: 1
+
+    50% {
+        margin-left: -1.5em;
+        left: 50%;
+        top: 35%;
+        opacity: 0;
+    }
+
+    99% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(.1);
+        opacity: 0;
     }
 }
 
-/* 
-.landing-checkbox:checked + div::before{
-    position: fixed;
-    pointer-events: none;
-    display: inline-block;
-    left: 1em;
-    top: 1em;
-    left: 0;
-    transition: all;
-    transition-duration: 3s
-}
-
-.landing-checkbox:checked + div::after{
-    position: fixed;
-    pointer-events: none;
-    display: inline-block;
-    left: 1em;
-    top: 1em;
-    left: 0;
-    bottom: 0;
-    animation: pulseButton 10s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
-    transition: all;
-    transition-duration: 3s
-}  */
-
-
-
-/* pulse animate */
 @keyframes pulseButton
 {
     0%
@@ -292,7 +304,7 @@ nav a {
     }
     50%
     {
-        transform: scale(1);
+        transform: scale(.5);
         opacity: 1;
     }
     90%{
@@ -333,7 +345,6 @@ nav a {
 .about-footer img {
     width: 100%;
     height: 100%;
-    
 }
 
 /* -----------------------
