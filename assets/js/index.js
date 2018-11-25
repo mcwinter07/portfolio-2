@@ -138,16 +138,18 @@ addListener(projectSlider, 'scroll', highlightNav)
 addMultListener(aboutRadios, 'change', navByRadio)
 addMultListener(projectRadios, 'change', navByRadio)
 
-
-// addMultListener(projectLink, 'mouseover', handleProjectLinks)
 const videoController = (e) => {
   const video = e.target
+  const playButton = video.previousElementSibling
   if (video.paused) { 
-    video.play() 
+    playButton.classList.add('video-active')
+    video.play()
   } else { 
     video.pause()
+    playButton.classList.remove('video-active')
   }  
 }
 
 addListener(document.querySelector("#intro-animation"), 'mousedown', videoController)
+
 
