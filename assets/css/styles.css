@@ -120,6 +120,7 @@ nav a {
 }
 
 .nav-toggle-label {
+    box-sizing: border-box;
     position: absolute;
     margin-left: 1em;
     margin-top: 1em;
@@ -184,13 +185,12 @@ nav a {
 }
 
 .landing-content-container {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     width: 100%;
-    padding: 20% 2em 0 2em;
+    padding: 20% 0 0 0;
     max-width: 500px;
 }
 
@@ -198,11 +198,14 @@ nav a {
     margin-bottom: 60%;
 }
 
+.landing-checkbox {
+    display: none;
+}
+
 
 /* pulse button */
-
 .pulse-button {
-    position: relative;
+    position: absolute;
     text-align: center;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -228,16 +231,54 @@ nav a {
     animation-iteration-count: infinite;
 }
 
-.landing-checkbox:checked + div, div:before, div:after {
+.landing-checkbox:checked + div {
+    position: fixed;
+    top: 2.5em;
+    left: 2.5em;
+    pointer-events: none;
+    animation: movePulse 1s linear;
+}
+
+@keyframes movePulse
+{
+    0%
+    {
+        left: 50%;
+        top: 100%;
+    }
+    50% {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 1
+    }
+}
+
+/* 
+.landing-checkbox:checked + div::before{
     position: fixed;
     pointer-events: none;
     display: inline-block;
     left: 1em;
     top: 1em;
-    right: 0;
-    animation: pulseButton 10s cubic-bezier(0.075, 0.82, 0.165, 1);
-    animation-iteration-count: infinite;
+    left: 0;
+    transition: all;
+    transition-duration: 3s
 }
+
+.landing-checkbox:checked + div::after{
+    position: fixed;
+    pointer-events: none;
+    display: inline-block;
+    left: 1em;
+    top: 1em;
+    left: 0;
+    bottom: 0;
+    animation: pulseButton 10s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    transition: all;
+    transition-duration: 3s
+}  */
 
 
 
@@ -264,7 +305,6 @@ nav a {
         opacity: 0
     }
 }
-
 
 
 /* -----------------------
