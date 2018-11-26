@@ -176,6 +176,7 @@ addMultListener(projectRadios, 'change', navByRadio)
 // intialise custom video play listener // 
 
 addListener(document.querySelector("#intro-animation"), 'mousedown', videoController)
+addListener(document.querySelector("#intro-animation"), 'touchstart', videoController)
 
 // intialise intro scroll listener // 
 
