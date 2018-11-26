@@ -1,9 +1,37 @@
-// vanilla slider JS
+// Nav Control //
+
+const navControl = e => {
+  let href = e.target.getAttribute('href')
+  let target = e.target.getAttribute('section-reference')
+  if (href !== null) {
+  e.target.setAttribute("section-reference", `${href}`)
+  target = e.target.getAttribute('section-reference')
+  } else {
+  target = e.target.getAttribute('section-reference')
+}
+// let element = document.querySelector(`${target}`)
+let distanceFromTop = document.querySelector(`${target}`).offsetTop
+// falls back to css anchor tag using id href is js not enabled
+e.target.removeAttribute("href")
+  window.scrollTo(0,distanceFromTop)
+  let toggleCheck = document.querySelector('#nav-toggle')
+  toggleCheck.checked = false
+}
+
+// Animation and Buttons
+
+const initiateLandingButton = (e) => {
+  let ischecked = e.target.checked
+  let aboutSection = document.querySelector(".about")
+  if (ischecked) {
+    aboutSection.scrollIntoView({behavior: "smooth"})
+  }
+}
+
+// Sliders //
 
 const aboutSlider = document.getElementsByClassName('about-slider')[0]
 const projectSlider = document.getElementsByClassName('project-slider')[0]
-
-
 
 let mouseDownDetected = false
 let touchStartDetected = false
@@ -57,7 +85,6 @@ const renderSliderNavigation = (sliderClassName, destinationID, navClassName) =>
     </li>
     `
   })
-  console.log(document.getElementById(destinationID))
   document.getElementById(destinationID).insertAdjacentHTML('afterbegin', navigationDoms)
   document.getElementsByClassName(`${navClassName}`)[0].checked = true
 }
@@ -75,13 +102,10 @@ const targetNavRadio = (e) => {
 
 const highlightNav = (e) => {
   let thisContainer = e.target
-  // console.log('container')
-  // console.log(thisContainer.clientWidth)
   let radio = targetNavRadio(e)
   let sliderWidth = thisContainer.clientWidth
   sliderScrollX = thisContainer.scrollLeft
-  // console.log('scroll x')
-  // console.log(sliderScrollX)
+
   radio[0].checked = true
 
   //FIXME: Accomotate dynamic slide pop
@@ -92,12 +116,6 @@ const highlightNav = (e) => {
     radio[2].checked = true
   }
 }
-
-const clickTest = (e) => {
-  console.log(e)
-  console.log('i have been recieved')
-}
-
 
 const navByRadio = (e) => {
   let Container = document.querySelectorAll(e.target.name)[0].parentNode
@@ -113,13 +131,29 @@ const navByRadio = (e) => {
   }
 }
 
-renderSliderNavigation('.about-slide','about-nav-container', 'about-radio')
+// Inline Video //
 
+const videoController = (e) => {
+  const video = e.target
+  const playButton = video.previousElementSibling
+  if (video.paused) { 
+    playButton.classList.add('video-active')
+    video.play()
+  } else { 
+    video.pause()
+    playButton.classList.remove('video-active')
+  }  
+}
+
+// slider Nav Buttons //
+
+renderSliderNavigation('.about-slide','about-nav-container', 'about-radio')
 renderSliderNavigation('.project-slide', 'project-nav-container', 'project-radio' )
 
 const aboutRadios = document.querySelectorAll('.about-radio')
 const projectRadios = document.querySelectorAll('.project-radio')
 
+// Initialise slider listeners //
 
 addListener(aboutSlider, 'mousedown', detectSliderClick)
 addListener(aboutSlider, 'mouseup', detectSliderRelease)
@@ -138,18 +172,16 @@ addListener(projectSlider, 'scroll', highlightNav)
 addMultListener(aboutRadios, 'change', navByRadio)
 addMultListener(projectRadios, 'change', navByRadio)
 
-const videoController = (e) => {
-  const video = e.target
-  const playButton = video.previousElementSibling
-  if (video.paused) { 
-    playButton.classList.add('video-active')
-    video.play()
-  } else { 
-    video.pause()
-    playButton.classList.remove('video-active')
-  }  
-}
+
+// intialise custom video play listener // 
 
 addListener(document.querySelector("#intro-animation"), 'mousedown', videoController)
 
+// intialise intro scroll listener // 
+
+addListener(document.querySelector(".landing-checkbox"), 'change', initiateLandingButton)
+
+
+
+addMultListener(document.querySelectorAll(".nav-link"), 'mousedown', navControl)
 

@@ -225,8 +225,7 @@ nav a {
     border-radius: 50%;
 }
 
-.pulse-button:before,
-.pulse-button:after {
+.pulse-button:before {
     content: '';
     display: inline-block;
     position: absolute;
@@ -238,6 +237,14 @@ nav a {
     border: 2px solid #E8624D;
     animation: pulseButton 3s cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-iteration-count: infinite;
+}
+
+.pulse-button:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    animation-iteration-count: 1;
 }
 
 .landing-checkbox:checked + div {
@@ -252,42 +259,21 @@ nav a {
 /* pulse animate */
 @keyframes movePulse
 {
-    0%
-    {
+    0% {
         transform: scale(2);
         margin-left: -1.5em;
         left: 50%;
         top: 100%;
     }
-    2% {
-        transform: scale(1);
-        margin-left: -1.5em;
-        left: 50%;
-        top: 100%;
-    }
+    2% { transform: scale(1); }
     
-    4%{
-        transform: scale(2);
-    }
+    4% { transform: scale(2); }
 
-    10% {
+    8% {
         transform: scale(.5);
-    }
-
-    49% { 
-        opacity: 1;
-        transform: scale(.5);
-    }
-
-    50% {
         margin-left: -1.5em;
         left: 50%;
-        top: 35%;
-        opacity: 0;
-    }
-
-    99% {
-        transform: scale(.5);
+        top: 100%;
         opacity: 0;
     }
 
