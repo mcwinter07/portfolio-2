@@ -236,7 +236,9 @@ nav a {
     bottom: -20px;
     border: 2px solid #E8624D;
     animation: pulseButton 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-animation: pulseButton 3s cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
 }
 
 .pulse-button:after {
@@ -245,6 +247,7 @@ nav a {
     position: absolute;
     border-radius: 50%;
     animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
 }
 
 .landing-checkbox:checked + div {
@@ -254,23 +257,32 @@ nav a {
     left: 2.5em;
     pointer-events: none;
     animation: movePulse 1s linear;
+    -webkit-animation: movePulse 1s linear;
 }
 
 /* pulse animate */
-@keyframes movePulse
-{
+
+@keyframes movePulse {
     0% {
         transform: scale(2);
+        -webkit-transform: scale(2);
         margin-left: -1.5em;
         left: 50%;
         top: 100%;
     }
-    2% { transform: scale(1); }
+    2% { 
+        transform: scale(1);
+        -webkit-transform: scale(1) 
+    }
     
-    4% { transform: scale(2); }
+    4% { 
+        transform: scale(2);
+        -webkit-transform: scale(2) 
+    }
 
     8% {
         transform: scale(.5);
+        -webkit-transform: scale(.5);
         margin-left: -1.5em;
         left: 50%;
         top: 100%;
@@ -279,6 +291,7 @@ nav a {
 
     100% {
         transform: scale(.1);
+        -webkit-transform: scale(.1);
         opacity: 0;
     }
 }
@@ -288,20 +301,24 @@ nav a {
     0%
     {
         transform: scale(0.5);
+        -webkit-transform: scale(.5);
         opacity: 0
     }
     50%
     {
         transform: scale(.5);
+        -webkit-transform: scale(.5);
         opacity: 1;
     }
     90%{
         transform: scale(1);
+        -webkit-transform: scale(.1);
         opacity: 0;
     }
     100%
     {
         transform: scale(0);
+        -webkit-transform: scale(0);
         opacity: 0
     }
 }
