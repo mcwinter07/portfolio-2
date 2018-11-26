@@ -1,11 +1,19 @@
 // Nav Control //
 
 const navControl = e => {
-  let target = e.target.getAttribute('href')
-  let element = document.querySelector(target)
-  // falls back to css href using id href is js not enabled
-  e.target.removeAttribute("href")
-  element.scrollIntoView({behavior: "smooth"})
+  let href = e.target.getAttribute('href')
+  let target = e.target.getAttribute('section-reference')
+  if (href !== null) {
+  e.target.setAttribute("section-reference", `${href}`)
+  target = e.target.getAttribute('section-reference')
+  } else {
+  target = e.target.getAttribute('section-reference')
+}
+// let element = document.querySelector(`${target}`)
+let distanceFromTop = document.querySelector(`${target}`).offsetTop
+// falls back to css anchor tag using id href is js not enabled
+e.target.removeAttribute("href")
+  window.scrollTo(0,distanceFromTop)
   let toggleCheck = document.querySelector('#nav-toggle')
   toggleCheck.checked = false
 }
